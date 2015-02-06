@@ -1,0 +1,5 @@
+/*.xcodeproj/*
+!/*.xcodeproj/project.pbxproj
+!/*.xcodeproj/project.xcworkspace
+/*.xcodeproj/project.xcworkspace/*
+!/*.xcodeproj/project.xcworkspace/contents.xcworkspacedata
