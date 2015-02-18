@@ -37,10 +37,6 @@ class PromiseKTests: XCTestCase {
 			return Promise<()>()
 		}.wait()
 		XCTAssertTrue(reaches)
-		
-		let a: Promise<Int> = Promise<Int>(2)
-		let b: Promise<Int> = Promise<Int>(3)
-		let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise<Int>(a0 + b0) } }
 	}
 }
 
@@ -58,9 +54,9 @@ extension Promise {
 }
 
 func asyncGet(value: Int) -> Promise<Int> {
-	return Promise<Int>({ resolve in
+	return Promise({ resolve in
 		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-			resolve(Promise<Int>(value))
+			resolve(Promise(value))
 		}
 	})
 }

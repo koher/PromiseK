@@ -13,11 +13,11 @@ func asyncFoo(value: Int) -> Promise<Int> {
 }
 
 func asyncBar(value: Int) -> Promise<Int> {
-	return async(value + value)
+	return async(value)
 }
 
 func asyncBaz(value: Int) -> Promise<Int> {
-	return async(value * value)
+	return async(value)
 }
 
 func asyncQux(value: Int) -> Promise<Int?> {
@@ -37,15 +37,18 @@ extension Promise {
 	}
 }
 
-// asyncFoo, asyncBar, asyncBaz: Int -> Promise<Int>
-let a: Promise<Int> = asyncFoo(2).flatMap { asyncBar($0) }.flatMap { asyncBaz($0) }
+// `flatMap` is `then` equivalent
+//   asyncFoo, asyncBar, asyncBaz: Int -> Promise<Int>
+//   # gets Int asynchronously
+let a: Promise<Int> = asyncFoo(2).flatMap { asyncBar($0 + 1) }.flatMap { asyncBaz($0 * 2) }
 let b: Promise<Int> = asyncFoo(3).map { $0 * $0 }
-let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise<Int>(a0 + b0) } }
+let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise(a0 + b0) } }
 
-// asyncQux: Int -> Promise<Int?>
-//   Returns Promise(nil) when it fails.
-let mightFail: Promise<Int?> = asyncQux(5).flatMap { Promise<Int?>($0.map { $0 * $0 }) }
-let howToCatch: Promise<Int> = asyncQux(7).flatMap { Promise<Int>($0 ?? 0) }
+// uses `Optional` for error handling
+//   asyncQux: Int -> Promise<Int?>
+//   # returns Promise(nil) when it fails.
+let mightFail: Promise<Int?> = asyncQux(5).flatMap { Promise($0.map { $0 * $0 }) }
+let howToCatch: Promise<Int> = asyncQux(7).flatMap { Promise($0 ?? 0) }
 
 sum.wait()
 println(a)
