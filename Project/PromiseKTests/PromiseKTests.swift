@@ -38,6 +38,73 @@ class PromiseKTests: XCTestCase {
 		}.wait()
 		XCTAssertTrue(reaches)
 	}
+	
+	func testFlatMapOperator() {
+		var reaches: Bool
+		
+		reaches = false
+		(asyncGet(3) >>- { (value: Int) -> Promise<()> in
+			reaches = true
+			XCTAssertEqual(value, 3)
+			return Promise<()>()
+		}).wait()
+		XCTAssertTrue(reaches)
+		
+		reaches = false
+		(asyncGet(3) >>- { (value: Int) in
+			XCTAssertEqual(value, 3)
+			return asyncGet(value * value)
+		} >>- { (value: Int) -> Promise<()> in
+				reaches = true
+				XCTAssertEqual(value, 9)
+				return Promise<()>()
+		}).wait()
+		XCTAssertTrue(reaches)
+		
+		reaches = false
+		(asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+			return valueOrNil.map { value in
+				XCTAssertEqual(value, 3)
+				return asyncGetOrFail(value * value, false)
+			}
+		} >>- { (valueOrNil: Int?) -> Promise<()> in
+			if let value = valueOrNil {
+				XCTAssertEqual(value, 9)
+				reaches = true
+			} else {
+				XCTFail()
+			}
+			return Promise<()>()
+		}).wait()
+		XCTAssertTrue(reaches)
+		
+		reaches = false
+		(asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+			return valueOrNil.map { value in
+				XCTAssertEqual(value, 3)
+				return asyncGetOrFail(value * value, true)
+			}
+		} >>- { (valueOrNil: Int?) -> Promise<()> in
+			XCTAssertTrue(valueOrNil == nil)
+			reaches = true
+			return Promise<()>()
+		}).wait()
+		XCTAssertTrue(reaches)
+		
+		reaches = false
+		(asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+			XCTAssertTrue(valueOrNil == nil)
+			return valueOrNil.map { value in
+				XCTFail()
+				return asyncGetOrFail(value * value, true)
+			}
+		} >>- { (valueOrNil: Int?) -> Promise<()> in
+			XCTAssertTrue(valueOrNil == nil)
+			reaches = true
+			return Promise<()>()
+		}).wait()
+		XCTAssertTrue(reaches)
+	}
 }
 
 extension Promise {
@@ -59,5 +126,9 @@ func asyncGet(value: Int) -> Promise<Int> {
 			resolve(Promise(value))
 		}
 	})
+}
+
+func asyncGetOrFail(value: Int, fails: Bool) -> Promise<Int?> {
+	return fails ? Promise(nil) : asyncGet(value).map { $0 }
 }
 

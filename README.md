@@ -4,18 +4,20 @@ PromiseK
 _PromiseK_ provides the `Promise` class designed as a _Monad_ for Swift.
 
 ```swift
-// `flatMap` is `then` equivalent
-//   asyncFoo, asyncBar, asyncBaz: Int -> Promise<Int>
-//   # gets Int asynchronously
-let a: Promise<Int> = asyncFoo(2).flatMap { asyncBar($0 + 1) }.flatMap { asyncBaz($0 * 2) }
-let b: Promise<Int> = asyncFoo(3).map { $0 * $0 }
+// `flatMap` is equivalent to `then` of JavaScript's `Promise`
+let a: Promise<Int> = asyncGet(2).flatMap { asyncGet($0) }.flatMap { asyncGet($0) }
+let b: Promise<Int> = asyncGet(3).map { $0 * $0 }
 let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise(a0 + b0) } }
 
 // uses `Optional` for error handling
-//   asyncQux: Int -> Promise<Int?>
-//   # returns Promise(nil) when it fails.
-let mightFail: Promise<Int?> = asyncQux(5).flatMap { Promise($0.map { $0 * $0 }) }
-let howToCatch: Promise<Int> = asyncQux(7).flatMap { Promise($0 ?? 0) }
+let mightFail: Promise<Int?> = asyncFailable(5).flatMap { Promise($0.map { $0 * $0 }) }
+let howToCatch: Promise<Int> = asyncFailable(7).flatMap { Promise($0 ?? 0) }
+
+// `>>-` operator is equivalent to `>>=` in Haskell
+// can use `>>-` instead of `flatMap`
+let a2: Promise<Int> = asyncGet(2) >>- { asyncGet($0) } >>- { asyncGet($0) }
+// a failable operation chain with `>>-`
+let failableChain: Promise<Int?> = asyncFailable(11) >>- { $0.map { asyncFailable($0) } }
 ```
 
 How to Install

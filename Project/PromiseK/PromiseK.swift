@@ -62,3 +62,13 @@ public func flatMap<T, U>(x: Promise<T>, f: T -> Promise<U>) -> Promise<U> {
 public func flatten<T>(x: Promise<Promise<T>>) -> Promise<T> {
 	return x.flatMap { $0 }
 }
+
+infix operator >>- { associativity left }
+
+public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
+	return lhs.flatMap(rhs)
+}
+
+public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> {
+	return lhs.flatMap { rhs($0) ?? Promise(nil) }
+}
