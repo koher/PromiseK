@@ -9,7 +9,7 @@ public class Promise<T> : Printable {
 	
 	public init(_ executor: (resolve: Promise<T> -> ()) -> ()) {
 		handlers = []
-		executor(resolve)
+		executor(resolve: resolve)
 	}
 	
 	private func resolve(promise: Promise<T>) {
