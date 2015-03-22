@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6A48F4F1A8448BE008272B1 /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6A48F4E1A8448BE008272B1 /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D65013691ABC1F0600F1CB39 /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */; };
 		D6A48F551A8448BE008272B1 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A48F491A8448BE008272B1 /* PromiseK.framework */; };
-		D6A48F5C1A8448BE008272B1 /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A48F5B1A8448BE008272B1 /* PromiseKTests.swift */; };
-		D6A48F661A844934008272B1 /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A48F651A844934008272B1 /* PromiseK.swift */; };
-		D6A48F6E1A84CBD3008272B1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A48F6D1A84CBD3008272B1 /* main.swift */; };
-		D6A48F751A84CF09008272B1 /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A48F651A844934008272B1 /* PromiseK.swift */; };
+		D6C80F1B1ABBE67B00F4FE3B /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */; };
+		D6C80F201ABBE68700F4FE3B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F1F1ABBE68700F4FE3B /* main.swift */; };
+		D6C80F211ABBE8AE00F4FE3B /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C80F141ABBE67B00F4FE3B /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6C80F221ABBE8C700F4FE3B /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +39,14 @@
 
 /* Begin PBXFileReference section */
 		D6A48F491A8448BE008272B1 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A48F4D1A8448BE008272B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6A48F4E1A8448BE008272B1 /* PromiseK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PromiseK.h; sourceTree = "<group>"; };
 		D6A48F541A8448BE008272B1 /* PromiseKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromiseKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A48F5A1A8448BE008272B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6A48F5B1A8448BE008272B1 /* PromiseKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
-		D6A48F651A844934008272B1 /* PromiseK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseK.swift; sourceTree = "<group>"; };
-		D6A48F6B1A84CBD3008272B1 /* PromiseKSamples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromiseKSamples; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A48F6D1A84CBD3008272B1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D6A48F6B1A84CBD3008272B1 /* PromiseKExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromiseKExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C80F131ABBE67B00F4FE3B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6C80F141ABBE67B00F4FE3B /* PromiseK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseK.h; sourceTree = "<group>"; };
+		D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseK.swift; sourceTree = "<group>"; };
+		D6C80F171ABBE67B00F4FE3B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
+		D6C80F1F1ABBE68700F4FE3B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +78,9 @@
 		D6A48F3F1A8448BE008272B1 = {
 			isa = PBXGroup;
 			children = (
-				D6A48F4B1A8448BE008272B1 /* PromiseK */,
-				D6A48F581A8448BE008272B1 /* PromiseKTests */,
-				D6A48F6C1A84CBD3008272B1 /* PromiseKSamples */,
+				D6C80F121ABBE67B00F4FE3B /* Source */,
+				D6C80F161ABBE67B00F4FE3B /* Tests */,
+				D6C80F1E1ABBE68700F4FE3B /* Example */,
 				D6A48F4A1A8448BE008272B1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,52 +90,36 @@
 			children = (
 				D6A48F491A8448BE008272B1 /* PromiseK.framework */,
 				D6A48F541A8448BE008272B1 /* PromiseKTests.xctest */,
-				D6A48F6B1A84CBD3008272B1 /* PromiseKSamples */,
+				D6A48F6B1A84CBD3008272B1 /* PromiseKExample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D6A48F4B1A8448BE008272B1 /* PromiseK */ = {
+		D6C80F121ABBE67B00F4FE3B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				D6A48F4E1A8448BE008272B1 /* PromiseK.h */,
-				D6A48F651A844934008272B1 /* PromiseK.swift */,
-				D6A48F4C1A8448BE008272B1 /* Supporting Files */,
+				D6C80F131ABBE67B00F4FE3B /* Info.plist */,
+				D6C80F141ABBE67B00F4FE3B /* PromiseK.h */,
+				D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */,
 			);
-			path = PromiseK;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		D6A48F4C1A8448BE008272B1 /* Supporting Files */ = {
+		D6C80F161ABBE67B00F4FE3B /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D6A48F4D1A8448BE008272B1 /* Info.plist */,
+				D6C80F171ABBE67B00F4FE3B /* Info.plist */,
+				D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */,
 			);
-			name = "Supporting Files";
+			path = Tests;
 			sourceTree = "<group>";
 		};
-		D6A48F581A8448BE008272B1 /* PromiseKTests */ = {
+		D6C80F1E1ABBE68700F4FE3B /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				D6A48F5B1A8448BE008272B1 /* PromiseKTests.swift */,
-				D6A48F591A8448BE008272B1 /* Supporting Files */,
+				D6C80F1F1ABBE68700F4FE3B /* main.swift */,
 			);
-			path = PromiseKTests;
-			sourceTree = "<group>";
-		};
-		D6A48F591A8448BE008272B1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D6A48F5A1A8448BE008272B1 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D6A48F6C1A84CBD3008272B1 /* PromiseKSamples */ = {
-			isa = PBXGroup;
-			children = (
-				D6A48F6D1A84CBD3008272B1 /* main.swift */,
-			);
-			path = PromiseKSamples;
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +129,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A48F4F1A8448BE008272B1 /* PromiseK.h in Headers */,
+				D6C80F211ABBE8AE00F4FE3B /* PromiseK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,9 +172,9 @@
 			productReference = D6A48F541A8448BE008272B1 /* PromiseKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D6A48F6A1A84CBD3008272B1 /* PromiseKSamples */ = {
+		D6A48F6A1A84CBD3008272B1 /* PromiseKExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKSamples" */;
+			buildConfigurationList = D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKExample" */;
 			buildPhases = (
 				D6A48F671A84CBD3008272B1 /* Sources */,
 				D6A48F681A84CBD3008272B1 /* Frameworks */,
@@ -200,9 +184,9 @@
 			);
 			dependencies = (
 			);
-			name = PromiseKSamples;
+			name = PromiseKExample;
 			productName = PromiseKSamples;
-			productReference = D6A48F6B1A84CBD3008272B1 /* PromiseKSamples */;
+			productReference = D6A48F6B1A84CBD3008272B1 /* PromiseKExample */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -239,7 +223,7 @@
 			targets = (
 				D6A48F481A8448BE008272B1 /* PromiseK */,
 				D6A48F531A8448BE008272B1 /* PromiseKTests */,
-				D6A48F6A1A84CBD3008272B1 /* PromiseKSamples */,
+				D6A48F6A1A84CBD3008272B1 /* PromiseKExample */,
 			);
 		};
 /* End PBXProject section */
@@ -266,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A48F661A844934008272B1 /* PromiseK.swift in Sources */,
+				D6C80F1B1ABBE67B00F4FE3B /* PromiseK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A48F5C1A8448BE008272B1 /* PromiseKTests.swift in Sources */,
+				D6C80F221ABBE8C700F4FE3B /* PromiseKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6A48F6E1A84CBD3008272B1 /* main.swift in Sources */,
-				D6A48F751A84CF09008272B1 /* PromiseK.swift in Sources */,
+				D6C80F201ABBE68700F4FE3B /* main.swift in Sources */,
+				D65013691ABC1F0600F1CB39 /* PromiseK.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,10 +375,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PromiseK/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PromiseK;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -408,10 +392,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PromiseK/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PromiseK;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -427,7 +411,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PromiseKTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -440,7 +424,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PromiseKTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -449,6 +433,7 @@
 		D6A48F6F1A84CBD3008272B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -462,6 +447,7 @@
 		D6A48F701A84CBD3008272B1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -499,7 +485,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKSamples" */ = {
+		D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D6A48F6F1A84CBD3008272B1 /* Debug */,

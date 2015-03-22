@@ -20,10 +20,22 @@ let a2: Promise<Int> = asyncGet(2) >>- { asyncGet($0) } >>- { asyncGet($0) }
 let failableChain: Promise<Int?> = asyncFailable(11) >>- { $0.map { asyncFailable($0) } }
 ```
 
-How to Install
+Installation
 ----------------------------
 
-### Embedded Framework
+### Carthage
+
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+[_Carthage_](https://github.com/Carthage/Carthage) is available to install _PromiseK_. Add it to your _Cartfile_:
+
+```
+github "koher/PromiseK" >= 1.0.0
+```
+
+### Manually
+
+#### Embedded Framework
 
 For iOS 8 or later,
 
@@ -32,7 +44,7 @@ For iOS 8 or later,
 3. Add PromiseK.framework to "Embedded Binaries".
 4. `import PromiseK` in your swift files.
 
-### Source
+#### Source
 
 For iOS 7, put [PromiseK.swift](Project/PromiseK/PromiseK.swift) into your project.
 
