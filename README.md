@@ -39,14 +39,14 @@ github "koher/PromiseK" >= 1.0.0
 
 For iOS 8 or later,
 
-1. Put [PromiseK.xcodeproj](Project/PromiseK.xcodeproj) into your project in Xcode.
+1. Put [PromiseK.xcodeproj](PromiseK.xcodeproj) into your project in Xcode.
 2. Click the project icon and select the "General" tab.
 3. Add PromiseK.framework to "Embedded Binaries".
 4. `import PromiseK` in your swift files.
 
 #### Source
 
-For iOS 7, put [PromiseK.swift](Project/PromiseK/PromiseK.swift) into your project.
+For iOS 7, put [PromiseK.swift](Source/PromiseK.swift) into your project.
 
 License
 ----------------------------
