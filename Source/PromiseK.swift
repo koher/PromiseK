@@ -72,3 +72,15 @@ public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
 public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> {
 	return lhs.flatMap { rhs($0) ?? Promise(nil) }
 }
+
+infix operator >- { associativity left }
+
+public func >-<T, U>(lhs: Promise<T>, rhs: T -> U) -> Promise<U> {
+	return lhs.map(rhs)
+}
+
+infix operator >| { associativity left }
+
+public func >|<T>(lhs: Promise<T>, rhs: T -> Void) {
+	lhs.map { rhs($0) }
+}
