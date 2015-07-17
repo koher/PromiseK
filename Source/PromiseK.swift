@@ -1,4 +1,4 @@
-public class Promise<T> : Printable {
+public class Promise<T> : CustomStringConvertible {
 	private var value: T?
 	private var handlers: [T -> ()]
 	
@@ -13,7 +13,7 @@ public class Promise<T> : Printable {
 	}
 	
 	private func resolve(promise: Promise<T>) {
-		promise.defer {
+		promise.`defer` {
 			if self.value != nil {
 				return
 			}
@@ -26,7 +26,7 @@ public class Promise<T> : Printable {
 		}
 	}
 	
-	private func defer(handler: T -> ()) {
+	private func `defer`(handler: T -> ()) {
 		if let value = self.value {
 			handler(value)
 		} else {
@@ -39,7 +39,7 @@ public class Promise<T> : Printable {
 	}
 	
 	public func flatMap<U>(f: T -> Promise<U>) -> Promise<U> {
-		return Promise<U>({ resolve in self.defer { resolve(f($0)) } })
+		return Promise<U>({ resolve in self.`defer` { resolve(f($0)) } })
 	}
 	
 	public var description: String {

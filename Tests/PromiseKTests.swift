@@ -128,7 +128,7 @@ func asyncGet(value: Int) -> Promise<Int> {
 	})
 }
 
-func asyncGetOrFail(value: Int, fails: Bool) -> Promise<Int?> {
+func asyncGetOrFail(value: Int, _ fails: Bool) -> Promise<Int?> {
 	return fails ? Promise(nil) : asyncGet(value).map { $0 }
 }
 
