@@ -41,6 +41,10 @@ public class Promise<T> {
     public func flatMap<U>(f: T -> Promise<U>) -> Promise<U> {
         return Promise<U>({ resolve in self.`defer` { resolve(f($0)) } })
     }
+    
+    public func apply<U>(f: Promise<T -> U>) -> Promise<U> {
+        return f.flatMap { self.map($0) }
+    }
 }
 
 extension Promise : CustomStringConvertible {
@@ -58,6 +62,8 @@ public func flatten<T>(x: Promise<Promise<T>>) -> Promise<T> {
 }
 
 infix operator >>- { associativity left precedence 100 }
+infix operator <^> { associativity left precedence 130 }
+infix operator <*> { associativity left precedence 130 }
 
 public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
     return lhs.flatMap(rhs)
@@ -65,4 +71,12 @@ public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
 
 public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> {
     return lhs.flatMap { rhs($0) ?? Promise(nil) }
+}
+
+public func <^><T, U>(lhs: T -> U, rhs: Promise<T>) -> Promise<U> {
+    return rhs.map(lhs)
+}
+
+public func <*><T, U>(lhs: Promise<T -> U>, rhs: Promise<T>) -> Promise<U> {
+    return rhs.apply(lhs)
 }

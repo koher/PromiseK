@@ -105,6 +105,19 @@ class PromiseKTests: XCTestCase {
         }).wait()
         XCTAssertTrue(reaches)
     }
+    
+    func testApplyOperator() {
+        var reaches: Bool
+
+        reaches = false
+        ((foo <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
+            XCTAssertEqual(a, 2)
+            XCTAssertEqual(b, 3)
+            reaches = true
+            return Promise<()>()
+        }).wait()
+        XCTAssertTrue(reaches)
+    }
 }
 
 extension Promise {
@@ -132,3 +145,6 @@ func asyncGetOrFail(value: Int, _ fails: Bool) -> Promise<Int?> {
     return fails ? Promise(nil) : asyncGet(value).map { $0 }
 }
 
+func foo(a: Int)(b: Int) -> (Int, Int) {
+    return (a, b)
+}
