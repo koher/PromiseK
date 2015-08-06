@@ -51,14 +51,6 @@ public class Promise<T> : CustomStringConvertible {
 	}
 }
 
-public func map<T, U>(x: Promise<T>, f: T -> U) -> Promise<U> {
-	return x.map(f)
-}
-
-public func flatMap<T, U>(x: Promise<T>, f: T -> Promise<U>) -> Promise<U> {
-	return x.flatMap(f)
-}
-
 public func flatten<T>(x: Promise<Promise<T>>) -> Promise<T> {
 	return x.flatMap { $0 }
 }
