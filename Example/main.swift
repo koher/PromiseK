@@ -1,32 +1,32 @@
 import Foundation
 
 extension Promise {
-	func wait() {
-		var finished = false
-		self.flatMap { (value: T) -> Promise<()> in
-			finished = true
-			return Promise<()>()
-		}
-		while (!finished){
-			NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1))
-		}
-	}
+    func wait() {
+        var finished = false
+        self.flatMap { (value: T) -> Promise<()> in
+            finished = true
+            return Promise<()>()
+        }
+        while (!finished){
+            NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1))
+        }
+    }
 }
 
 func async<T>(value: T) -> Promise<T> {
-	return Promise<T>({ resolve in
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
-			resolve(Promise<T>(value))
-		}
-	})
+    return Promise<T>({ resolve in
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            resolve(Promise<T>(value))
+        }
+    })
 }
 
 func asyncGet(value: Int) -> Promise<Int> {
-	return async(value)
+    return async(value)
 }
 
 func asyncFailable(value: Int) -> Promise<Int?> {
-	return async(value).map { arc4random() % 2 == 0 ? $0 : nil }
+    return async(value).map { arc4random() % 2 == 0 ? $0 : nil }
 }
 
 // `flatMap` is equivalent to `then` of JavaScript's `Promise`
