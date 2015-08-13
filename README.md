@@ -30,7 +30,7 @@ Installation
 [_Carthage_](https://github.com/Carthage/Carthage) is available to install _PromiseK_. Add it to your _Cartfile_:
 
 ```
-github "koher/PromiseK" >= 1.0.0
+github "koher/PromiseK" "swift-2.0"
 ```
 
 ### Manually
@@ -46,7 +46,7 @@ For iOS 8 or later,
 
 #### Source
 
-For iOS 7, put [PromiseK.swift](Source/PromiseK.swift) into your project.
+For iOS 7, put all swift files in the [Source](Source) directory into your project.
 
 License
 ----------------------------
