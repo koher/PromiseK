@@ -61,10 +61,6 @@ public func flatten<T>(x: Promise<Promise<T>>) -> Promise<T> {
     return x.flatMap { $0 }
 }
 
-infix operator >>- { associativity left precedence 100 }
-infix operator <^> { associativity left precedence 130 }
-infix operator <*> { associativity left precedence 130 }
-
 public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
     return lhs.flatMap(rhs)
 }

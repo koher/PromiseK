@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D65013691ABC1F0600F1CB39 /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */; };
+		D6948BA61B7CA97400CDD8FE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
 		D6A48F551A8448BE008272B1 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A48F491A8448BE008272B1 /* PromiseK.framework */; };
 		D6C80F1B1ABBE67B00F4FE3B /* PromiseK.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */; };
 		D6C80F201ABBE68700F4FE3B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F1F1ABBE68700F4FE3B /* main.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D6948BA51B7CA97400CDD8FE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		D6A48F491A8448BE008272B1 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A48F541A8448BE008272B1 /* PromiseKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PromiseKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6A48F6B1A84CBD3008272B1 /* PromiseKExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromiseKExample; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				D6C80F131ABBE67B00F4FE3B /* Info.plist */,
 				D6C80F141ABBE67B00F4FE3B /* PromiseK.h */,
 				D6C80F151ABBE67B00F4FE3B /* PromiseK.swift */,
+				D6948BA51B7CA97400CDD8FE /* Operators.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6C80F1B1ABBE67B00F4FE3B /* PromiseK.swift in Sources */,
+				D6948BA61B7CA97400CDD8FE /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
