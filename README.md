@@ -7,7 +7,7 @@ _PromiseK_ provides the `Promise` class designed as a _Monad_ for Swift.
 // `flatMap` is equivalent to `then` of JavaScript's `Promise`
 let a: Promise<Int> = asyncGet(2).flatMap { asyncGet($0) }.flatMap { asyncGet($0) }
 let b: Promise<Int> = asyncGet(3).map { $0 * $0 }
-let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise(a0 + b0) } }
+let sum: Promise<Int> = a.flatMap { a0 in b.flatMap { b0 in Promise(a0 + b0) } }
 
 // uses `Optional` for error handling
 let mightFail: Promise<Int?> = asyncFailable(5).flatMap { Promise($0.map { $0 * $0 }) }
