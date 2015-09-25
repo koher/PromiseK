@@ -13,7 +13,7 @@ public class Promise<T> {
     }
     
     private func resolve(promise: Promise<T>) {
-        promise.`defer` {
+        promise.reserve {
             if self.value != nil {
                 return
             }
@@ -26,7 +26,7 @@ public class Promise<T> {
         }
     }
     
-    private func `defer`(handler: T -> ()) {
+    private func reserve(handler: T -> ()) {
         if let value = self.value {
             handler(value)
         } else {
@@ -39,7 +39,7 @@ public class Promise<T> {
     }
     
     public func flatMap<U>(f: T -> Promise<U>) -> Promise<U> {
-        return Promise<U>({ resolve in self.`defer` { resolve(f($0)) } })
+        return Promise<U>({ resolve in self.reserve { resolve(f($0)) } })
     }
     
     public func apply<U>(f: Promise<T -> U>) -> Promise<U> {
