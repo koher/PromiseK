@@ -3,133 +3,144 @@ import PromiseK
 
 class PromiseKTests: XCTestCase {
     func testMap() {
-        var reaches: Bool
-        
-        reaches = false
+        let expectation = expectationWithDescription("")
+
         asyncGet(3).map {
-            reaches = true
             XCTAssertEqual($0, 3)
             return $0 * $0
         }.map { (value: Int) in
             XCTAssertEqual(value, 9)
-        }.wait()
-        XCTAssertTrue(reaches)
+            expectation.fulfill()
+        }
+        
+        waitForExpectationsWithTimeout(3.0, handler: nil)
     }
     
     func testFlatMap() {
-        var reaches: Bool
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGet(3).flatMap { (value: Int) -> Promise<()> in
+                XCTAssertEqual(value, 3)
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
         
-        reaches = false
-        asyncGet(3).flatMap { (value: Int) -> Promise<()> in
-            reaches = true
-            XCTAssertEqual(value, 3)
-            return Promise<()>()
-        }.wait()
-        XCTAssertTrue(reaches)
-        
-        reaches = false
-        asyncGet(3).flatMap { (value: Int) in
-            XCTAssertEqual(value, 3)
-            return asyncGet(value * value)
-        }.flatMap { (value: Int) -> Promise<()> in
-            reaches = true
-            XCTAssertEqual(value, 9)
-            return Promise<()>()
-        }.wait()
-        XCTAssertTrue(reaches)
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGet(3).flatMap { (value: Int) in
+                XCTAssertEqual(value, 3)
+                return asyncGet(value * value)
+            }.flatMap { (value: Int) -> Promise<()> in
+                XCTAssertEqual(value, 9)
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
     }
     
     func testFlatMapOperator() {
-        var reaches: Bool
-        
-        reaches = false
-        (asyncGet(3) >>- { (value: Int) -> Promise<()> in
-            reaches = true
-            XCTAssertEqual(value, 3)
-            return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
-        
-        reaches = false
-        (asyncGet(3) >>- { (value: Int) in
-            XCTAssertEqual(value, 3)
-            return asyncGet(value * value)
-        } >>- { (value: Int) -> Promise<()> in
-                reaches = true
-                XCTAssertEqual(value, 9)
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGet(3) >>- { (value: Int) -> Promise<()> in
+                XCTAssertEqual(value, 3)
+                expectation.fulfill()
                 return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
-        
-        reaches = false
-        (asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
-            return valueOrNil.map { value in
-                XCTAssertEqual(value, 3)
-                return asyncGetOrFail(value * value, false)
             }
-        } >>- { (valueOrNil: Int?) -> Promise<()> in
-            if let value = valueOrNil {
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+        
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGet(3) >>- { (value: Int) in
+                XCTAssertEqual(value, 3)
+                return asyncGet(value * value)
+            } >>- { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 9)
-                reaches = true
-            } else {
-                XCTFail()
+                expectation.fulfill()
+                return Promise<()>()
             }
-            return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
         
-        reaches = false
-        (asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
-            return valueOrNil.map { value in
-                XCTAssertEqual(value, 3)
-                return asyncGetOrFail(value * value, true)
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+                valueOrNil.map { value in
+                    XCTAssertEqual(value, 3)
+                    return asyncGetOrFail(value * value, false)
+                }
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                if let value = valueOrNil {
+                    XCTAssertEqual(value, 9)
+                } else {
+                    XCTFail()
+                }
+                expectation.fulfill()
+                return Promise<()>()
             }
-        } >>- { (valueOrNil: Int?) -> Promise<()> in
-            XCTAssertTrue(valueOrNil == nil)
-            reaches = true
-            return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
         
-        reaches = false
-        (asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
-            XCTAssertTrue(valueOrNil == nil)
-            return valueOrNil.map { value in
-                XCTFail()
-                return asyncGetOrFail(value * value, true)
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+                valueOrNil.map { value in
+                    XCTAssertEqual(value, 3)
+                    return asyncGetOrFail(value * value, true)
+                }
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                XCTAssertTrue(valueOrNil == nil)
+                expectation.fulfill()
+                return Promise<()>()
             }
-        } >>- { (valueOrNil: Int?) -> Promise<()> in
-            XCTAssertTrue(valueOrNil == nil)
-            reaches = true
-            return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+        
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+                XCTAssertTrue(valueOrNil == nil)
+                return valueOrNil.map { value in
+                    XCTFail()
+                    return asyncGetOrFail(value * value, true)
+                }
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                XCTAssertTrue(valueOrNil == nil)
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
     }
     
     func testApplyOperator() {
-        var reaches: Bool
-
-        reaches = false
-        ((foo <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
+        let expectation = expectationWithDescription("")
+        
+        (foo <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
             XCTAssertEqual(a, 2)
             XCTAssertEqual(b, 3)
-            reaches = true
-            return Promise<()>()
-        }).wait()
-        XCTAssertTrue(reaches)
-    }
-}
-
-extension Promise {
-    func wait() {
-        var finished = false
-        self.flatMap { (value: T) -> Promise<()> in
-            finished = true
+            expectation.fulfill()
             return Promise<()>()
         }
-        while (!finished){
-            NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 0.1))
-        }
+        
+        waitForExpectationsWithTimeout(3.0, handler: nil)
     }
 }
 
