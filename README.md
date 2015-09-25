@@ -30,7 +30,7 @@ Installation
 [_Carthage_](https://github.com/Carthage/Carthage) is available to install _PromiseK_. Add it to your _Cartfile_:
 
 ```
-github "koher/PromiseK" "swift-2.0"
+github "koher/PromiseK" ~> 2.0
 ```
 
 ### Manually
