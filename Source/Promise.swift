@@ -1,14 +1,12 @@
 public class Promise<T> {
     private var value: T?
-    private var handlers: [T -> ()]
+    private var handlers: [T -> ()] = []
     
     public init(_ value: T) {
         self.value = value
-        handlers = []
     }
     
     public init(_ executor: (resolve: Promise<T> -> ()) -> ()) {
-        handlers = []
         executor(resolve: resolve)
     }
     
