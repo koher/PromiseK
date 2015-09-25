@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D65013691ABC1F0600F1CB39 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
+		D65818331BB4E32900EF4530 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; settings = {ASSET_TAGS = (); }; };
+		D65818341BB4E32900EF4530 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; settings = {ASSET_TAGS = (); }; };
 		D6948BA61B7CA97400CDD8FE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
 		D6A48F551A8448BE008272B1 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A48F491A8448BE008272B1 /* PromiseK.framework */; };
 		D6C80F1B1ABBE67B00F4FE3B /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
@@ -272,7 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6C80F201ABBE68700F4FE3B /* main.swift in Sources */,
-				D65013691ABC1F0600F1CB39 /* Promise.swift in Sources */,
+				D65818331BB4E32900EF4530 /* Promise.swift in Sources */,
+				D65818341BB4E32900EF4530 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

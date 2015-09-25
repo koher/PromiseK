@@ -39,7 +39,7 @@ public class Promise<T> {
     }
     
     public func flatMap<U>(f: T -> Promise<U>) -> Promise<U> {
-        return Promise<U>({ resolve in self.reserve { resolve(f($0)) } })
+        return Promise<U> { resolve in self.reserve { resolve(f($0)) } }
     }
     
     public func apply<U>(f: Promise<T -> U>) -> Promise<U> {

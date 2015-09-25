@@ -14,11 +14,11 @@ extension Promise {
 }
 
 func async<T>(value: T) -> Promise<T> {
-    return Promise<T>({ resolve in
+    return Promise<T> { resolve in
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
             resolve(Promise<T>(value))
         }
-    })
+    }
 }
 
 func asyncGet(value: Int) -> Promise<Int> {
@@ -45,18 +45,18 @@ let a2: Promise<Int> = asyncGet(2) >>- { asyncGet($0) } >>- { asyncGet($0) }
 let failableChain: Promise<Int?> = asyncFailable(11) >>- { $0.map { asyncFailable($0) } }
 
 sum.wait()
-println(a)
-println(b)
-println(sum)
+print(a)
+print(b)
+print(sum)
 
 mightFail.wait()
-println(mightFail)
+print(mightFail)
 
 howToCatch.wait()
-println(howToCatch)
+print(howToCatch)
 
 a2.wait()
-println(a2)
+print(a2)
 
 failableChain.wait()
-println(failableChain)
+print(failableChain)
