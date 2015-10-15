@@ -55,6 +55,10 @@ extension Promise : CustomStringConvertible {
     }
 }
 
+public func pure<T>(x: T) -> Promise<T> {
+    return Promise(x)
+}
+
 public func flatten<T>(x: Promise<Promise<T>>) -> Promise<T> {
     return x.flatMap { $0 }
 }

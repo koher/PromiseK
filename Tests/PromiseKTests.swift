@@ -2,6 +2,21 @@ import XCTest
 import PromiseK
 
 class PromiseKTests: XCTestCase {
+    func testPure() {
+        let expectation = expectationWithDescription("")
+        
+        var result: Int = 0
+        let promise: Promise<Int> = pure(2)
+        promise.map {
+            result = $0
+            expectation.fulfill()
+        }
+
+        waitForExpectationsWithTimeout(3.0, handler: nil)
+
+        XCTAssertEqual(2, result)
+    }
+    
     func testMap() {
         let expectation = expectationWithDescription("")
 
