@@ -1,4 +1,8 @@
+import Foundation
+
 public class Promise<T> {
+    private let lock = NSObject()
+    
     private var value: T?
     private var handlers: [T -> ()] = []
     
@@ -25,11 +29,13 @@ public class Promise<T> {
     }
     
     private func reserve(handler: T -> ()) {
+        objc_sync_enter(lock)
         if let value = self.value {
             handler(value)
         } else {
             handlers.append(handler)
         }
+        objc_sync_exit(lock)
     }
     
     public func map<U>(f: T -> U) -> Promise<U> {
