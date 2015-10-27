@@ -157,6 +157,21 @@ class PromiseKTests: XCTestCase {
         
         waitForExpectationsWithTimeout(3.0, handler: nil)
     }
+    
+    func testOperationQueue() {
+        let expectation = expectationWithDescription("")
+        let queue = dispatch_queue_create("test", nil)
+        
+        pure(1).flatMap { i -> Promise<Int> in
+            return Promise<Int>(queue) { resolve in
+                XCTAssert(!NSThread.isMainThread())
+                expectation.fulfill()
+                resolve(pure(i + 1))
+            }
+        }
+        
+        waitForExpectationsWithTimeout(3.0, handler: nil)
+    }
 }
 
 func asyncGet(value: Int) -> Promise<Int> {

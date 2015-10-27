@@ -10,8 +10,14 @@ public class Promise<T> {
         self.value = value
     }
     
-    public init(_ executor: (resolve: Promise<T> -> ()) -> ()) {
-        executor(resolve: resolve)
+    public init(_ queue: dispatch_queue_t? = nil, executor: (resolve: Promise<T> -> ()) -> ()) {
+        if let queue = queue {
+            dispatch_async(queue) {
+                executor(resolve: self.resolve)
+            }
+        } else {
+            executor(resolve: resolve)
+        }
     }
     
     private func resolve(promise: Promise<T>) {
