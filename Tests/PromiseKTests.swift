@@ -157,6 +157,30 @@ class PromiseKTests: XCTestCase {
         
         waitForExpectationsWithTimeout(3.0, handler: nil)
     }
+    
+    func testSynchronization() {
+        let queue1 = dispatch_queue_create("foo", DISPATCH_QUEUE_SERIAL)
+        let queue2 = dispatch_queue_create("bar", DISPATCH_QUEUE_SERIAL)
+
+        for i in 1...100 { // cause simultaneous `resolve` and `reserve`
+            let expectation = expectationWithDescription("\(i)")
+            
+            let promise = Promise<Int> { resolve in
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC))), queue1) {
+                    resolve(pure(2))
+                }
+            }
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC))), queue2) {
+                let _: Promise<Int> = promise.flatMap {
+                    expectation.fulfill()
+                    return Promise($0 * $0)
+                }
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+    }
 }
 
 func asyncGet(value: Int) -> Promise<Int> {

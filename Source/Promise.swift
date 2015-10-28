@@ -16,15 +16,16 @@ public class Promise<T> {
     
     private func resolve(promise: Promise<T>) {
         promise.reserve {
-            if self.value != nil {
-                return
+            objc_sync_enter(self.lock)
+            if self.value == nil {
+                self.value = $0
+                
+                for handler in self.handlers {
+                    handler($0)
+                }
+                self.handlers.removeAll(keepCapacity: false)
             }
-            self.value = $0
-            
-            for handler in self.handlers {
-                handler($0)
-            }
-            self.handlers.removeAll(keepCapacity: false)
+            objc_sync_exit(self.lock)
         }
     }
     
