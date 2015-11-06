@@ -174,7 +174,7 @@ class PromiseKTests: XCTestCase {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC))), queue2) {
                 let _: Promise<Int> = promise.flatMap {
                     expectation.fulfill()
-                    return Promise($0 * $0)
+                    return pure($0 * $0)
                 }
             }
             
