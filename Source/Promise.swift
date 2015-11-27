@@ -78,6 +78,10 @@ public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> 
     return lhs.flatMap { rhs($0) ?? Promise(nil) }
 }
 
+public func -<<<T, U>(lhs: T -> Promise<U>, rhs: Promise<T>) -> Promise<U> {
+    return rhs.flatMap(lhs)
+}
+
 public func <^><T, U>(lhs: T -> U, rhs: Promise<T>) -> Promise<U> {
     return rhs.map(lhs)
 }

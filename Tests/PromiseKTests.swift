@@ -145,6 +145,20 @@ class PromiseKTests: XCTestCase {
         }
     }
     
+    func testFlippedFlatMapOperator() {
+        if true {
+            let expectation = expectationWithDescription(""); // this ; is necessary
+            
+            { (value: Int) -> Promise<()> in
+                XCTAssertEqual(value, 3)
+                expectation.fulfill()
+                return Promise<()>()
+            } -<< asyncGet(3)
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+    }
+    
     func testApplyOperator() {
         let expectation = expectationWithDescription("")
         

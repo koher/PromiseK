@@ -588,7 +588,6 @@
 		D6553C511C08199700A85392 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -611,7 +610,6 @@
 		D6553C521C08199700A85392 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -980,6 +978,7 @@
 				D6553C9C1C081E7500A85392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6553CB41C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -988,6 +987,7 @@
 				D6553CB61C081E8400A85392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6553CB71C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -996,6 +996,7 @@
 				D6553CB91C081E8400A85392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D6A48F431A8448BE008272B1 /* Build configuration list for PBXProject "PromiseK" */ = {
 			isa = XCConfigurationList;
