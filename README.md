@@ -18,6 +18,8 @@ let howToCatch: Promise<Int> = asyncFailable(7).flatMap { Promise($0 ?? 0) }
 let a2: Promise<Int> = asyncGet(2) >>- { asyncGet($0) } >>- { asyncGet($0) }
 // a failable operation chain with `>>-`
 let failableChain: Promise<Int?> = asyncFailable(11) >>- { $0.map { asyncFailable($0) } }
+// also `>>-?` operator is available
+let failableChain2: Promise<Int?> = asyncFailable(11) >>-? { asyncFailable($0) }
 ```
 
 Installation

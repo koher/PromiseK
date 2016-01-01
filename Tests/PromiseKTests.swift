@@ -145,6 +145,57 @@ class PromiseKTests: XCTestCase {
         }
     }
     
+    func testFlatMapQOperator() {
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, false) >>-? { value in
+                XCTAssertEqual(value, 3)
+                return asyncGetOrFail(value * value, false)
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                if let value = valueOrNil {
+                    XCTAssertEqual(value, 9)
+                } else {
+                    XCTFail()
+                }
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+        
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, false) >>-? { value in
+                XCTAssertEqual(value, 3)
+                return asyncGetOrFail(value * value, true)
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                XCTAssertTrue(valueOrNil == nil)
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+        
+        if true {
+            let expectation = expectationWithDescription("")
+            
+            asyncGetOrFail(3, true) >>-? { value in
+                XCTFail()
+                return asyncGetOrFail(value * value, true)
+            } >>- { (valueOrNil: Int?) -> Promise<()> in
+                XCTAssertTrue(valueOrNil == nil)
+                expectation.fulfill()
+                return Promise<()>()
+            }
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+    }
+    
     func testFlippedFlatMapOperator() {
         if true {
             let expectation = expectationWithDescription(""); // this ; is necessary
@@ -154,6 +205,20 @@ class PromiseKTests: XCTestCase {
                 expectation.fulfill()
                 return Promise<()>()
             } -<< asyncGet(3)
+            
+            waitForExpectationsWithTimeout(3.0, handler: nil)
+        }
+    }
+    
+    func testFlippedFlatMapQOperator() {
+        if true {
+            let expectation = expectationWithDescription(""); // this ; is necessary
+            
+            { (value: Int) -> Promise<()?> in
+                XCTAssertEqual(value, 3)
+                expectation.fulfill()
+                return Promise<()?>(.Some())
+            } -<<? asyncGetOrFail(3, false)
             
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }

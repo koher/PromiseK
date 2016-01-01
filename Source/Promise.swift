@@ -74,12 +74,27 @@ public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
     return lhs.flatMap(rhs)
 }
 
+public func >>-?<T, U>(lhs: Promise<T?>, rhs: T -> Promise<U?>) -> Promise<U?> {
+    return lhs.flatMap { x in
+        switch x {
+        case .None:
+            return pure(.None)
+        case let .Some(x):
+            return rhs(x)
+        }
+    }
+}
+
 public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> {
     return lhs.flatMap { rhs($0) ?? Promise(nil) }
 }
 
 public func -<<<T, U>(lhs: T -> Promise<U>, rhs: Promise<T>) -> Promise<U> {
     return rhs.flatMap(lhs)
+}
+
+public func -<<?<T, U>(lhs: T -> Promise<U?>, rhs: Promise<T?>) -> Promise<U?> {
+    return rhs >>-? lhs
 }
 
 public func <^><T, U>(lhs: T -> U, rhs: Promise<T>) -> Promise<U> {
