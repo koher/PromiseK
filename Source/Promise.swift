@@ -75,14 +75,7 @@ public func >>-<T, U>(lhs: Promise<T>, rhs: T -> Promise<U>) -> Promise<U> {
 }
 
 public func >>-?<T, U>(lhs: Promise<T?>, rhs: T -> Promise<U?>) -> Promise<U?> {
-    return lhs.flatMap { x in
-        switch x {
-        case .None:
-            return pure(.None)
-        case let .Some(x):
-            return rhs(x)
-        }
-    }
+    return lhs.flatMap { $0.map(rhs) ?? Promise(nil) }
 }
 
 public func >>-<T, U>(lhs: Promise<T?>, rhs: T? -> Promise<U?>?) -> Promise<U?> {
