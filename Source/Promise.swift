@@ -106,8 +106,8 @@ public func >|<T>(lhs: Promise<T>, rhs: T -> ()) {
     _ = lhs.map(rhs)
 }
 
-public func >-?<T, U>(lhs: Promise<T?>, rhs: T -> U?) -> Promise<U?> {
-    return lhs.map { $0.flatMap(rhs) }
+public func >-?<T, U>(lhs: Promise<T?>, rhs: T -> U) -> Promise<U?> {
+    return lhs.map { $0.map(rhs) }
 }
 
 public func >|?<T>(lhs: Promise<T?>, rhs: T -> ()) {
