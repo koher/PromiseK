@@ -1,7 +1,7 @@
 import Foundation
 
 public class Promise<T> {
-    private let lock = NSObject()
+    private let lock = NSRecursiveLock()
     
     private var value: T?
     private var handlers: [T -> ()] = []
@@ -16,7 +16,7 @@ public class Promise<T> {
     
     private func resolve(promise: Promise<T>) {
         promise.reserve {
-            objc_sync_enter(self.lock)
+            self.lock.lock()
             if self.value == nil {
                 self.value = $0
                 
@@ -25,18 +25,18 @@ public class Promise<T> {
                 }
                 self.handlers.removeAll(keepCapacity: false)
             }
-            objc_sync_exit(self.lock)
+            self.lock.unlock()
         }
     }
     
     private func reserve(handler: T -> ()) {
-        objc_sync_enter(lock)
+        lock.lock()
         if let value = self.value {
             handler(value)
         } else {
             handlers.append(handler)
         }
-        objc_sync_exit(lock)
+        lock.unlock()
     }
     
     public func map<U>(f: T -> U) -> Promise<U> {
