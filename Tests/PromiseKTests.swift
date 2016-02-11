@@ -32,7 +32,7 @@ class PromiseKTests: XCTestCase {
     }
     
     func testFlatMap() {
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGet(3).flatMap { (value: Int) -> Promise<()> in
@@ -44,7 +44,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGet(3).flatMap { (value: Int) in
@@ -61,7 +61,7 @@ class PromiseKTests: XCTestCase {
     }
     
     func testFlatMapOperator() {
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGet(3) >>- { (value: Int) -> Promise<()> in
@@ -73,7 +73,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGet(3) >>- { (value: Int) in
@@ -88,7 +88,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
@@ -109,7 +109,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
@@ -126,7 +126,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
@@ -146,7 +146,7 @@ class PromiseKTests: XCTestCase {
     }
     
     func testFlatMapQOperator() {
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, false) >>-? { value in
@@ -165,7 +165,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, false) >>-? { value in
@@ -180,7 +180,7 @@ class PromiseKTests: XCTestCase {
             waitForExpectationsWithTimeout(3.0, handler: nil)
         }
         
-        if true {
+        do {
             let expectation = expectationWithDescription("")
             
             asyncGetOrFail(3, true) >>-? { value in
@@ -197,7 +197,7 @@ class PromiseKTests: XCTestCase {
     }
     
     func testFlippedFlatMapOperator() {
-        if true {
+        do {
             let expectation = expectationWithDescription(""); // this ; is necessary
             
             { (value: Int) -> Promise<()> in
@@ -211,7 +211,7 @@ class PromiseKTests: XCTestCase {
     }
     
     func testFlippedFlatMapQOperator() {
-        if true {
+        do {
             let expectation = expectationWithDescription(""); // this ; is necessary
             
             { (value: Int) -> Promise<()?> in
