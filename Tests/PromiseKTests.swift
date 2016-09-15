@@ -3,7 +3,7 @@ import PromiseK
 
 class PromiseKTests: XCTestCase {
     func testPure() {
-        let expectation = expectationWithDescription("")
+        let expectation = self.expectation(description: "")
         
         var result: Int = 0
         let promise: Promise<Int> = pure(2)
@@ -12,13 +12,13 @@ class PromiseKTests: XCTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(3.0, handler: nil)
+        waitForExpectations(timeout: 3.0, handler: nil)
 
         XCTAssertEqual(2, result)
     }
     
     func testMap() {
-        let expectation = expectationWithDescription("")
+        let expectation = self.expectation(description: "")
 
         asyncGet(3).map {
             XCTAssertEqual($0, 3)
@@ -28,12 +28,12 @@ class PromiseKTests: XCTestCase {
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(3.0, handler: nil)
+        waitForExpectations(timeout: 3.0, handler: nil)
     }
     
     func testFlatMap() {
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGet(3).flatMap { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
@@ -41,11 +41,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGet(3).flatMap { (value: Int) in
                 XCTAssertEqual(value, 3)
@@ -56,13 +56,13 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
     
     func testFlatMapOperator() {
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGet(3) >>- { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
@@ -70,11 +70,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGet(3) >>- { (value: Int) in
                 XCTAssertEqual(value, 3)
@@ -85,11 +85,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 valueOrNil.map { value in
@@ -106,11 +106,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 valueOrNil.map { value in
@@ -123,11 +123,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 XCTAssertTrue(valueOrNil == nil)
@@ -141,13 +141,13 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
     
     func testFlatMapQOperator() {
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, false) >>-? { value in
                 XCTAssertEqual(value, 3)
@@ -162,11 +162,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, false) >>-? { value in
                 XCTAssertEqual(value, 3)
@@ -177,11 +177,11 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
         
         do {
-            let expectation = expectationWithDescription("")
+            let expectation = self.expectation(description: "")
             
             asyncGetOrFail(3, true) >>-? { value in
                 XCTFail()
@@ -192,13 +192,13 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
     
     func testFlippedFlatMapOperator() {
         do {
-            let expectation = expectationWithDescription(""); // this ; is necessary
+            let expectation = self.expectation(description: ""); // this ; is necessary
             
             { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
@@ -206,26 +206,26 @@ class PromiseKTests: XCTestCase {
                 return Promise<()>()
             } -<< asyncGet(3)
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
     
     func testFlippedFlatMapQOperator() {
         do {
-            let expectation = expectationWithDescription(""); // this ; is necessary
+            let expectation = self.expectation(description: ""); // this ; is necessary
             
             { (value: Int) -> Promise<()?> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
-                return Promise<()?>(.Some())
+                return Promise<()?>(.some())
             } -<<? asyncGetOrFail(3, false)
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
     
     func testApplyOperator() {
-        let expectation = expectationWithDescription("")
+        let expectation = self.expectation(description: "")
         
         (foo <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
             XCTAssertEqual(a, 2)
@@ -234,46 +234,46 @@ class PromiseKTests: XCTestCase {
             return Promise<()>()
         }
         
-        waitForExpectationsWithTimeout(3.0, handler: nil)
+        waitForExpectations(timeout: 3.0, handler: nil)
     }
     
     func testSynchronization() {
-        let queue1 = dispatch_queue_create("foo", DISPATCH_QUEUE_SERIAL)
-        let queue2 = dispatch_queue_create("bar", DISPATCH_QUEUE_SERIAL)
+        let queue1 = DispatchQueue(label: "foo", attributes: [])
+        let queue2 = DispatchQueue(label: "bar", attributes: [])
 
         for i in 1...100 { // cause simultaneous `resolve` and `reserve`
-            let expectation = expectationWithDescription("\(i)")
+            let expectation = self.expectation(description: "\(i)")
             
             let promise = Promise<Int> { resolve in
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC))), queue1) {
+                queue1.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
                     resolve(pure(2))
                 }
             }
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC))), queue2) {
+            queue2.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
                 let _: Promise<Int> = promise.flatMap {
                     expectation.fulfill()
                     return pure($0 * $0)
                 }
             }
             
-            waitForExpectationsWithTimeout(3.0, handler: nil)
+            waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
 }
 
-func asyncGet(value: Int) -> Promise<Int> {
+func asyncGet(_ value: Int) -> Promise<Int> {
     return Promise { resolve in
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             resolve(Promise(value))
         }
     }
 }
 
-func asyncGetOrFail(value: Int, _ fails: Bool) -> Promise<Int?> {
+func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<Int?> {
     return fails ? Promise(nil) : asyncGet(value).map { $0 }
 }
 
-func foo(a: Int)(b: Int) -> (Int, Int) {
+func foo(_ a: Int, _ b: Int) -> (Int, Int) {
     return (a, b)
 }

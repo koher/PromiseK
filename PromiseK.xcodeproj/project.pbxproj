@@ -393,9 +393,11 @@
 				TargetAttributes = {
 					D6553C3F1C08199700A85392 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0800;
 					};
 					D6553C481C08199700A85392 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0800;
 					};
 					D6553C951C081E7500A85392 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -604,6 +606,7 @@
 				PRODUCT_NAME = PromiseK;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -627,6 +630,7 @@
 				PRODUCT_NAME = PromiseK;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -643,6 +647,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -660,6 +665,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
