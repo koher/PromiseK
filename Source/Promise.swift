@@ -10,7 +10,7 @@ open class Promise<T> {
         self.value = value
     }
     
-    public init(_ executor: (_ resolve: (Promise<T>) -> ()) -> ()) {
+    public init(_ executor: (_ resolve: @escaping (Promise<T>) -> ()) -> ()) {
         executor(resolve)
     }
     

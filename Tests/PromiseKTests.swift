@@ -7,7 +7,7 @@ class PromiseKTests: XCTestCase {
         
         var result: Int = 0
         let promise: Promise<Int> = pure(2)
-        promise.map {
+        _ = promise.map {
             result = $0
             expectation.fulfill()
         }
@@ -20,7 +20,7 @@ class PromiseKTests: XCTestCase {
     func testMap() {
         let expectation = self.expectation(description: "")
 
-        asyncGet(3).map {
+        _ = asyncGet(3).map {
             XCTAssertEqual($0, 3)
             return $0 * $0
         }.map { (value: Int) in
@@ -35,7 +35,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGet(3).flatMap { (value: Int) -> Promise<()> in
+            _ = asyncGet(3).flatMap { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
                 return Promise<()>()
@@ -47,7 +47,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGet(3).flatMap { (value: Int) in
+            _ = asyncGet(3).flatMap { (value: Int) in
                 XCTAssertEqual(value, 3)
                 return asyncGet(value * value)
             }.flatMap { (value: Int) -> Promise<()> in
@@ -64,7 +64,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGet(3) >>- { (value: Int) -> Promise<()> in
+            _ = asyncGet(3) >>- { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
                 return Promise<()>()
@@ -76,7 +76,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGet(3) >>- { (value: Int) in
+            _ = asyncGet(3) >>- { (value: Int) in
                 XCTAssertEqual(value, 3)
                 return asyncGet(value * value)
             } >>- { (value: Int) -> Promise<()> in
@@ -91,7 +91,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+            _ = asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 valueOrNil.map { value in
                     XCTAssertEqual(value, 3)
                     return asyncGetOrFail(value * value, false)
@@ -112,7 +112,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+            _ = asyncGetOrFail(3, false) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 valueOrNil.map { value in
                     XCTAssertEqual(value, 3)
                     return asyncGetOrFail(value * value, true)
@@ -129,7 +129,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
+            _ = asyncGetOrFail(3, true) >>- { (valueOrNil: Int?) -> Promise<Int?>? in
                 XCTAssertTrue(valueOrNil == nil)
                 return valueOrNil.map { value in
                     XCTFail()
@@ -149,7 +149,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, false) >>-? { value in
+            _ = asyncGetOrFail(3, false) >>-? { value in
                 XCTAssertEqual(value, 3)
                 return asyncGetOrFail(value * value, false)
             } >>- { (valueOrNil: Int?) -> Promise<()> in
@@ -168,7 +168,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, false) >>-? { value in
+            _ = asyncGetOrFail(3, false) >>-? { value in
                 XCTAssertEqual(value, 3)
                 return asyncGetOrFail(value * value, true)
             } >>- { (valueOrNil: Int?) -> Promise<()> in
@@ -183,7 +183,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            asyncGetOrFail(3, true) >>-? { value in
+            _ = asyncGetOrFail(3, true) >>-? { value in
                 XCTFail()
                 return asyncGetOrFail(value * value, true)
             } >>- { (valueOrNil: Int?) -> Promise<()> in
@@ -200,7 +200,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: ""); // this ; is necessary
             
-            { (value: Int) -> Promise<()> in
+            _ = { (value: Int) -> Promise<()> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
                 return Promise<()>()
@@ -214,7 +214,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: ""); // this ; is necessary
             
-            { (value: Int) -> Promise<()?> in
+            _ = { (value: Int) -> Promise<()?> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
                 return Promise<()?>(.some())
@@ -227,7 +227,7 @@ class PromiseKTests: XCTestCase {
     func testApplyOperator() {
         let expectation = self.expectation(description: "")
         
-        (foo <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
+        _ = (curry(foo) <^> asyncGet(2) <*> asyncGet(3)) >>- { (a: Int, b: Int) -> Promise<()> in
             XCTAssertEqual(a, 2)
             XCTAssertEqual(b, 3)
             expectation.fulfill()
@@ -276,4 +276,8 @@ func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<Int?> {
 
 func foo(_ a: Int, _ b: Int) -> (Int, Int) {
     return (a, b)
+}
+
+func curry<A, B, Z>(_ f: @escaping (A, B) -> Z) -> (A) -> (B) -> Z {
+    return { a in { b in f(a, b) } }
 }

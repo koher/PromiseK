@@ -1,7 +1,26 @@
-infix operator >>- { associativity left precedence 100 }
-infix operator -<< { associativity right precedence 100 }
-infix operator <^> { associativity left precedence 130 }
-infix operator <*> { associativity left precedence 130 }
+precedencegroup MonadicPrecedenceRight {
+    associativity: right
+    lowerThan: LogicalDisjunctionPrecedence
+    higherThan: AssignmentPrecedence
+}
 
-infix operator >>-? { associativity left precedence 100 }
-infix operator -<<? { associativity right precedence 100 }
+precedencegroup MonadicPrecedenceLeft {
+    associativity: left
+    lowerThan: LogicalDisjunctionPrecedence
+    higherThan: AssignmentPrecedence
+}
+
+precedencegroup ApplicativePrecedence {
+    associativity: left
+    higherThan: LogicalConjunctionPrecedence
+    lowerThan: NilCoalescingPrecedence
+}
+
+infix operator >>- : MonadicPrecedenceLeft
+infix operator -<< : MonadicPrecedenceRight
+
+infix operator <^> : ApplicativePrecedence
+infix operator <*> : ApplicativePrecedence
+
+infix operator >>-? : MonadicPrecedenceLeft
+infix operator -<<? : MonadicPrecedenceRight
