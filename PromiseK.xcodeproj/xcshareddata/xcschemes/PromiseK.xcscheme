@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "9999"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6A48F481A8448BE008272B1"
+               BlueprintIdentifier = "______Target_PromiseK"
                BuildableName = "PromiseK.framework"
-               BlueprintName = "PromiseK-iOS"
+               BlueprintName = "PromiseK"
                ReferencedContainer = "container:PromiseK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,22 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D6A48F531A8448BE008272B1"
-               BuildableName = "PromiseK-iOS Tests.xctest"
-               BlueprintName = "PromiseK-iOS Tests"
+               BlueprintIdentifier = "______Target_PromiseKTests"
+               BuildableName = "PromiseKTests.xctest"
+               BlueprintName = "PromiseKTests"
                ReferencedContainer = "container:PromiseK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6A48F481A8448BE008272B1"
-            BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
-            ReferencedContainer = "container:PromiseK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +55,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6A48F481A8448BE008272B1"
+            BlueprintIdentifier = "______Target_PromiseK"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -79,15 +70,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D6A48F481A8448BE008272B1"
-            BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
-            ReferencedContainer = "container:PromiseK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -260,18 +260,65 @@ class PromiseKTests: XCTestCase {
             waitForExpectations(timeout: 3.0, handler: nil)
         }
     }
+    
+    func testSample() {
+        // `flatMap` is equivalent to `then` of JavaScript's `Promise`
+        let a: Promise<Int> = asyncGet(2).flatMap { asyncGet($0) }.flatMap { asyncGet($0) }
+        let b: Promise<Int> = asyncGet(3).map { $0 * $0 }
+        let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise(a0 + b0) } }
+        
+        // uses `Optional` for error handling
+        let mightFail: Promise<Int?> = asyncFailable(5).flatMap { Promise($0.map { $0 * $0 }) }
+        let howToCatch: Promise<Int> = asyncFailable(7).flatMap { Promise($0 ?? 0) }
+        
+        // `>>-` operator is equivalent to `>>=` in Haskell
+        // can use `>>-` instead of `flatMap`
+        let a2: Promise<Int> = asyncGet(2) >>- { asyncGet($0) } >>- { asyncGet($0) }
+        // a failable operation chain with `>>-`
+        let failableChain: Promise<Int?> = asyncFailable(11) >>- { $0.map { asyncFailable($0) } }
+        // also `>>-?` operator is available
+        let failableChain2: Promise<Int?> = asyncFailable(11) >>-? { asyncFailable($0) }
+        
+        sum.wait()
+        print(a)
+        print(b)
+        print(sum)
+        
+        mightFail.wait()
+        print(mightFail)
+        
+        howToCatch.wait()
+        print(howToCatch)
+        
+        a2.wait()
+        print(a2)
+        
+        failableChain.wait()
+        print(failableChain)
+        
+        failableChain2.wait()
+        print(failableChain2)
+    }
 }
 
-func asyncGet(_ value: Int) -> Promise<Int> {
-    return Promise { resolve in
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+func async<T>(_ value: T) -> Promise<T> {
+    return Promise<T> { resolve in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             resolve(Promise(value))
         }
     }
 }
 
+func asyncGet(_ value: Int) -> Promise<Int> {
+    return async(value)
+}
+
 func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<Int?> {
     return fails ? Promise(nil) : asyncGet(value).map { $0 }
+}
+
+func asyncFailable(_ value: Int) -> Promise<Int?> {
+    return async(value).map { arc4random() % 2 == 0 ? $0 : nil }
 }
 
 func foo(_ a: Int, _ b: Int) -> (Int, Int) {
@@ -280,4 +327,17 @@ func foo(_ a: Int, _ b: Int) -> (Int, Int) {
 
 func curry<A, B, Z>(_ f: @escaping (A, B) -> Z) -> (A) -> (B) -> Z {
     return { a in { b in f(a, b) } }
+}
+
+extension Promise {
+    func wait() {
+        var finished = false
+        _ = self.flatMap { (value: T) -> Promise<()> in
+            finished = true
+            return Promise<()>()
+        }
+        while (!finished){
+            RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.1))
+        }
+    }
 }
