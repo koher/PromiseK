@@ -1,26 +1,26 @@
-precedencegroup MonadicPrecedenceRight {
+precedencegroup PromiseKMonadicPrecedenceRight {
     associativity: right
     lowerThan: LogicalDisjunctionPrecedence
     higherThan: AssignmentPrecedence
 }
 
-precedencegroup MonadicPrecedenceLeft {
+precedencegroup PromiseKMonadicPrecedenceLeft {
     associativity: left
     lowerThan: LogicalDisjunctionPrecedence
     higherThan: AssignmentPrecedence
 }
 
-precedencegroup ApplicativePrecedence {
+precedencegroup PromiseKApplicativePrecedence {
     associativity: left
     higherThan: LogicalConjunctionPrecedence
     lowerThan: NilCoalescingPrecedence
 }
 
-infix operator >>- : MonadicPrecedenceLeft
-infix operator -<< : MonadicPrecedenceRight
+infix operator >>- : PromiseKMonadicPrecedenceLeft
+infix operator -<< : PromiseKMonadicPrecedenceRight
 
-infix operator <^> : ApplicativePrecedence
-infix operator <*> : ApplicativePrecedence
+infix operator <^> : PromiseKApplicativePrecedence
+infix operator <*> : PromiseKApplicativePrecedence
 
-infix operator >>-? : MonadicPrecedenceLeft
-infix operator -<<? : MonadicPrecedenceRight
+infix operator >>-? : PromiseKMonadicPrecedenceLeft
+infix operator -<<? : PromiseKMonadicPrecedenceRight
