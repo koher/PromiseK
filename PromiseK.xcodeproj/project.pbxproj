@@ -7,131 +7,105 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		_LinkFileRef_PromiseK_via_PromiseKTests /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PromiseK" /* PromiseK.framework */; };
-		__src_cc_ref_Sources/Operators.swift /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Operators.swift /* Operators.swift */; };
-		__src_cc_ref_Sources/Promise.swift /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Promise.swift /* Promise.swift */; };
-		__src_cc_ref_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */; };
+		OBJ_21 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* Operators.swift */; };
+		OBJ_22 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Promise.swift */; };
+		OBJ_29 /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* PromiseKTests.swift */; };
+		OBJ_31 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* PromiseK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D628F9C81DC99FA0004C8356 /* PBXContainerItemProxy */ = {
+		D687D5DC1E994BB1006EA0C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = __RootObject_ /* Project object */;
+			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = "______Target_PromiseK";
+			remoteGlobalIDString = OBJ_16;
 			remoteInfo = PromiseK;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		__PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PromiseK.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
-		__PBXFileRef_Sources/Operators.swift /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Sources/Promise.swift /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
-		__PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
-		"_____Product_PromiseK" /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"_____Product_PromiseKTests" /* PromiseKTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = PromiseKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_12 /* PromiseKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_15 /* PromiseKTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = PromiseKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_8 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		OBJ_9 /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		"___LinkPhase_PromiseK" /* Frameworks */ = {
+		OBJ_23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		"___LinkPhase_PromiseKTests" /* Frameworks */ = {
+		OBJ_30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				_LinkFileRef_PromiseK_via_PromiseKTests /* PromiseK.framework in Frameworks */,
+				OBJ_31 /* PromiseK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		TestProducts_ /* Tests */ = {
+		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				"_____Product_PromiseKTests" /* PromiseKTests.xctest */,
+				OBJ_11 /* PromiseKTests */,
 			);
 			name = Tests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		"___RootGroup_" = {
+		OBJ_11 /* PromiseKTests */ = {
 			isa = PBXGroup;
 			children = (
-				__PBXFileRef_Package.swift /* Package.swift */,
-				"_____Configs_" /* Configs */,
-				"_____Sources_" /* Sources */,
-				"_______Tests_" /* Tests */,
-				"____Products_" /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		"____Products_" /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				TestProducts_ /* Tests */,
-				"_____Product_PromiseK" /* PromiseK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		"_____Configs_" /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */,
-			);
-			name = Configs;
-			sourceTree = "<group>";
-		};
-		"_____Sources_" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				"_______Group_PromiseK" /* PromiseK */,
-			);
-			name = Sources;
-			sourceTree = "<group>";
-		};
-		"_______Group_PromiseK" /* PromiseK */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Sources/Operators.swift /* Operators.swift */,
-				__PBXFileRef_Sources/Promise.swift /* Promise.swift */,
-			);
-			name = PromiseK;
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"_______Group_PromiseKTests" /* PromiseKTests */ = {
-			isa = PBXGroup;
-			children = (
-				__PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */,
+				OBJ_12 /* PromiseKTests.swift */,
 			);
 			name = PromiseKTests;
 			path = Tests/PromiseKTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
-		"_______Tests_" /* Tests */ = {
+		OBJ_13 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"_______Group_PromiseKTests" /* PromiseKTests */,
+				OBJ_14 /* PromiseK.framework */,
+				OBJ_15 /* PromiseKTests.xctest */,
 			);
-			name = Tests;
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_13 /* Products */,
+			);
+			name = "";
 			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Operators.swift */,
+				OBJ_9 /* Promise.swift */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		"______Target_PromiseK" /* PromiseK */ = {
+		OBJ_16 /* PromiseK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_PromiseK" /* Build configuration list for PBXNativeTarget "PromiseK" */;
+			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "PromiseK" */;
 			buildPhases = (
-				CompilePhase_PromiseK /* Sources */,
-				"___LinkPhase_PromiseK" /* Frameworks */,
+				OBJ_20 /* Sources */,
+				OBJ_23 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,86 +113,90 @@
 			);
 			name = PromiseK;
 			productName = PromiseK;
-			productReference = "_____Product_PromiseK" /* PromiseK.framework */;
+			productReference = OBJ_14 /* PromiseK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		"______Target_PromiseKTests" /* PromiseKTests */ = {
+		OBJ_24 /* PromiseKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = "_______Confs_PromiseKTests" /* Build configuration list for PBXNativeTarget "PromiseKTests" */;
+			buildConfigurationList = OBJ_25 /* Build configuration list for PBXNativeTarget "PromiseKTests" */;
 			buildPhases = (
-				CompilePhase_PromiseKTests /* Sources */,
-				"___LinkPhase_PromiseKTests" /* Frameworks */,
+				OBJ_28 /* Sources */,
+				OBJ_30 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				__Dependency_PromiseK /* PBXTargetDependency */,
+				OBJ_32 /* PBXTargetDependency */,
 			);
 			name = PromiseKTests;
 			productName = PromiseKTests;
-			productReference = "_____Product_PromiseKTests" /* PromiseKTests.xctest */;
+			productReference = OBJ_15 /* PromiseKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		__RootObject_ /* Project object */ = {
+		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "PromiseK" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "PromiseK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = "___RootGroup_";
-			productRefGroup = "____Products_" /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"______Target_PromiseK" /* PromiseK */,
-				"______Target_PromiseKTests" /* PromiseKTests */,
+				OBJ_16 /* PromiseK */,
+				OBJ_24 /* PromiseKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CompilePhase_PromiseK /* Sources */ = {
+		OBJ_20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				__src_cc_ref_Sources/Operators.swift /* Operators.swift in Sources */,
-				__src_cc_ref_Sources/Promise.swift /* Promise.swift in Sources */,
+				OBJ_21 /* Operators.swift in Sources */,
+				OBJ_22 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CompilePhase_PromiseKTests /* Sources */ = {
+		OBJ_28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				__src_cc_ref_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift in Sources */,
+				OBJ_29 /* PromiseKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		__Dependency_PromiseK /* PBXTargetDependency */ = {
+		OBJ_32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "______Target_PromiseK" /* PromiseK */;
-			targetProxy = D628F9C81DC99FA0004C8356 /* PBXContainerItemProxy */;
+			target = OBJ_16 /* PromiseK */;
+			targetProxy = D687D5DC1E994BB1006EA0C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		_ReleaseConf_PromiseK /* Release */ = {
+		OBJ_18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseK_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -226,28 +204,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PromiseK;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_VERSION = 3.0;
+				SKIP_INSTALL = YES;
+				TARGET_NAME = PromiseK;
 			};
-			name = Release;
+			name = Debug;
 		};
-		_ReleaseConf_PromiseKTests /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
-		"___DebugConf_PromiseK" /* Debug */ = {
+		OBJ_19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseK_Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
 				OTHER_LDFLAGS = "$(inherited)";
@@ -255,72 +225,120 @@
 				PRODUCT_BUNDLE_IDENTIFIER = PromiseK;
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		"___DebugConf_PromiseKTests" /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
-				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		"_____Release_" /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */;
-			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				SKIP_INSTALL = YES;
+				TARGET_NAME = PromiseK;
 			};
 			name = Release;
 		};
-		"_______Debug_" /* Debug */ = {
+		OBJ_26 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = __PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */;
 			buildSettings = {
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = PromiseKTests;
 			};
 			name = Debug;
+		};
+		OBJ_27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = PromiseKTests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		"___RootConfs_" /* Build configuration list for PBXProject "PromiseK" */ = {
+		OBJ_17 /* Build configuration list for PBXNativeTarget "PromiseK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"_______Debug_" /* Debug */,
-				"_____Release_" /* Release */,
+				OBJ_18 /* Debug */,
+				OBJ_19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		"_______Confs_PromiseK" /* Build configuration list for PBXNativeTarget "PromiseK" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "PromiseK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"___DebugConf_PromiseK" /* Debug */,
-				_ReleaseConf_PromiseK /* Release */,
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		"_______Confs_PromiseKTests" /* Build configuration list for PBXNativeTarget "PromiseKTests" */ = {
+		OBJ_25 /* Build configuration list for PBXNativeTarget "PromiseKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				"___DebugConf_PromiseKTests" /* Debug */,
-				_ReleaseConf_PromiseKTests /* Release */,
+				OBJ_26 /* Debug */,
+				OBJ_27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = __RootObject_ /* Project object */;
+	rootObject = OBJ_1 /* Project object */;
 }

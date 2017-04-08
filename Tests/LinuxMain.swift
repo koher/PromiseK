@@ -1,6 +1,6 @@
 import XCTest
-@testable import PromisureTests
+@testable import PromiseKTests
 
 XCTMain([
-     testCase(PromisureTests.allTests),
+    testCase(PromiseKTests.allTests),
 ])

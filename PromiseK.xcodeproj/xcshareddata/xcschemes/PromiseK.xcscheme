@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "______Target_PromiseK"
+               BlueprintIdentifier = "OBJ_16"
                BuildableName = "PromiseK.framework"
                BlueprintName = "PromiseK"
                ReferencedContainer = "container:PromiseK.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "______Target_PromiseKTests"
+               BlueprintIdentifier = "OBJ_24"
                BuildableName = "PromiseKTests.xctest"
                BlueprintName = "PromiseKTests"
                ReferencedContainer = "container:PromiseK.xcodeproj">
@@ -55,7 +55,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "______Target_PromiseK"
+            BlueprintIdentifier = "OBJ_16"
             BuildableName = "PromiseK.framework"
             BlueprintName = "PromiseK"
             ReferencedContainer = "container:PromiseK.xcodeproj">
