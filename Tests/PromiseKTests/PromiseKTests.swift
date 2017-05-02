@@ -123,7 +123,7 @@ func curry<A, B, Z>(_ f: @escaping (A, B) -> Z) -> (A) -> (B) -> Z {
 extension Promise {
     func wait() {
         var finished = false
-        _ = self.flatMap { (value: T) -> Promise<()> in
+        _ = self.flatMap { (value: Value) -> Promise<()> in
             finished = true
             return Promise<()>()
         }

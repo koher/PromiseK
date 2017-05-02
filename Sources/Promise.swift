@@ -1,20 +1,20 @@
 import Foundation
 
-public class Promise<T> {
+public class Promise<Value> {
     private let lock = NSRecursiveLock()
     
-    fileprivate var value: T?
-    private var handlers: [(T) -> ()] = []
+    fileprivate var value: Value?
+    private var handlers: [(Value) -> ()] = []
     
-    public init(_ value: T) {
+    public init(_ value: Value) {
         self.value = value
     }
     
-    public init(_ executor: (_ resolve: @escaping (Promise<T>) -> ()) -> ()) {
+    public init(_ executor: (_ resolve: @escaping (Promise<Value>) -> ()) -> ()) {
         executor(resolve)
     }
     
-    private func resolve(_ promise: Promise<T>) {
+    private func resolve(_ promise: Promise<Value>) {
         promise.reserve {
             self.lock.lock()
             if self.value == nil {
@@ -29,7 +29,7 @@ public class Promise<T> {
         }
     }
     
-    private func reserve(_ handler: @escaping (T) -> ()) {
+    private func reserve(_ handler: @escaping (Value) -> ()) {
         lock.lock()
         if let value = self.value {
             handler(value)
@@ -39,12 +39,12 @@ public class Promise<T> {
         lock.unlock()
     }
     
-    public func map<U>(_ f: @escaping (T) -> U) -> Promise<U> {
-        return flatMap { Promise<U>(f($0)) }
+    public func map<T>(_ f: @escaping (Value) -> T) -> Promise<T> {
+        return flatMap { Promise<T>(f($0)) }
     }
     
-    public func flatMap<U>(_ f: @escaping (T) -> Promise<U>) -> Promise<U> {
-        return Promise<U> { resolve in self.reserve { resolve(f($0)) } }
+    public func flatMap<T>(_ f: @escaping (Value) -> Promise<T>) -> Promise<T> {
+        return Promise<T> { resolve in self.reserve { resolve(f($0)) } }
     }
 }
 
