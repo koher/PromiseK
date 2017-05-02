@@ -7,1034 +7,320 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D6553C4A1C08199700A85392 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6553C401C08199700A85392 /* PromiseK.framework */; };
-		D6553C571C0819D100A85392 /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C80F141ABBE67B00F4FE3B /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6553C581C0819D100A85392 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
-		D6553C591C081AB300A85392 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
-		D6553C5A1C081D2500A85392 /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */; };
-		D6553CAD1C081E8400A85392 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6553CA31C081E8400A85392 /* PromiseK.framework */; };
-		D6553CBA1C081EC700A85392 /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C80F141ABBE67B00F4FE3B /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6553CBB1C081EC700A85392 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
-		D6553CBC1C081EC700A85392 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
-		D6553CBD1C081EC800A85392 /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C80F141ABBE67B00F4FE3B /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6553CBE1C081EC800A85392 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
-		D6553CBF1C081EC800A85392 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
-		D6553CC01C081ECE00A85392 /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */; };
-		D65818331BB4E32900EF4530 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
-		D65818341BB4E32900EF4530 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
-		D6948BA61B7CA97400CDD8FE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6948BA51B7CA97400CDD8FE /* Operators.swift */; };
-		D6A48F551A8448BE008272B1 /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6A48F491A8448BE008272B1 /* PromiseK.framework */; };
-		D6C80F1B1ABBE67B00F4FE3B /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F151ABBE67B00F4FE3B /* Promise.swift */; };
-		D6C80F201ABBE68700F4FE3B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F1F1ABBE68700F4FE3B /* main.swift */; };
-		D6C80F211ABBE8AE00F4FE3B /* PromiseK.h in Headers */ = {isa = PBXBuildFile; fileRef = D6C80F141ABBE67B00F4FE3B /* PromiseK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6C80F221ABBE8C700F4FE3B /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */; };
+		_LinkFileRef_PromiseK_via_PromiseKTests /* PromiseK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_PromiseK" /* PromiseK.framework */; };
+		__src_cc_ref_Sources/Operators.swift /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Operators.swift /* Operators.swift */; };
+		__src_cc_ref_Sources/Promise.swift /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Promise.swift /* Promise.swift */; };
+		__src_cc_ref_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D6553C4B1C08199700A85392 /* PBXContainerItemProxy */ = {
+		D628F9C81DC99FA0004C8356 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D6A48F401A8448BE008272B1 /* Project object */;
+			containerPortal = __RootObject_ /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D6553C3F1C08199700A85392;
-			remoteInfo = "PromiseK-Mac";
-		};
-		D6553CAE1C081E8400A85392 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D6A48F401A8448BE008272B1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D6553CA21C081E8400A85392;
-			remoteInfo = "PromiseK-tvOS";
-		};
-		D6A48F561A8448BE008272B1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D6A48F401A8448BE008272B1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D6A48F481A8448BE008272B1;
+			remoteGlobalIDString = "______Target_PromiseK";
 			remoteInfo = PromiseK;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D6A48F691A84CBD3008272B1 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		D6553C401C08199700A85392 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6553C491C08199700A85392 /* PromiseK-Mac Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PromiseK-Mac Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6553C961C081E7500A85392 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6553CA31C081E8400A85392 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6553CAC1C081E8400A85392 /* PromiseK-tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PromiseK-tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6948BA51B7CA97400CDD8FE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
-		D6A48F491A8448BE008272B1 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A48F541A8448BE008272B1 /* PromiseK-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PromiseK-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6A48F6B1A84CBD3008272B1 /* PromiseKExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PromiseKExample; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6C80F131ABBE67B00F4FE3B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6C80F141ABBE67B00F4FE3B /* PromiseK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseK.h; sourceTree = "<group>"; };
-		D6C80F151ABBE67B00F4FE3B /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
-		D6C80F171ABBE67B00F4FE3B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
-		D6C80F1F1ABBE68700F4FE3B /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		__PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PromiseK.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Operators.swift /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Promise.swift /* Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
+		"_____Product_PromiseK" /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_PromiseKTests" /* PromiseKTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = PromiseKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D6553C3C1C08199700A85392 /* Frameworks */ = {
+		"___LinkPhase_PromiseK" /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6553C461C08199700A85392 /* Frameworks */ = {
+		"___LinkPhase_PromiseKTests" /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				D6553C4A1C08199700A85392 /* PromiseK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C921C081E7500A85392 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C9F1C081E8400A85392 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553CA91C081E8400A85392 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CAD1C081E8400A85392 /* PromiseK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F451A8448BE008272B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F511A8448BE008272B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6A48F551A8448BE008272B1 /* PromiseK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F681A84CBD3008272B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				_LinkFileRef_PromiseK_via_PromiseKTests /* PromiseK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D6A48F3F1A8448BE008272B1 = {
+		TestProducts_ /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D6C80F121ABBE67B00F4FE3B /* Source */,
-				D6C80F161ABBE67B00F4FE3B /* Tests */,
-				D6C80F1E1ABBE68700F4FE3B /* Example */,
-				D6A48F4A1A8448BE008272B1 /* Products */,
+				"_____Product_PromiseKTests" /* PromiseKTests.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				"_____Sources_" /* Sources */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D6A48F4A1A8448BE008272B1 /* Products */ = {
+		"____Products_" /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D6A48F491A8448BE008272B1 /* PromiseK.framework */,
-				D6A48F541A8448BE008272B1 /* PromiseK-iOS Tests.xctest */,
-				D6A48F6B1A84CBD3008272B1 /* PromiseKExample */,
-				D6553C401C08199700A85392 /* PromiseK.framework */,
-				D6553C491C08199700A85392 /* PromiseK-Mac Tests.xctest */,
-				D6553C961C081E7500A85392 /* PromiseK.framework */,
-				D6553CA31C081E8400A85392 /* PromiseK.framework */,
-				D6553CAC1C081E8400A85392 /* PromiseK-tvOS Tests.xctest */,
+				TestProducts_ /* Tests */,
+				"_____Product_PromiseK" /* PromiseK.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D6C80F121ABBE67B00F4FE3B /* Source */ = {
+		"_____Configs_" /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				D6C80F131ABBE67B00F4FE3B /* Info.plist */,
-				D6C80F141ABBE67B00F4FE3B /* PromiseK.h */,
-				D6C80F151ABBE67B00F4FE3B /* Promise.swift */,
-				D6948BA51B7CA97400CDD8FE /* Operators.swift */,
+				__PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */,
 			);
-			path = Source;
+			name = Configs;
 			sourceTree = "<group>";
 		};
-		D6C80F161ABBE67B00F4FE3B /* Tests */ = {
+		"_____Sources_" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D6C80F171ABBE67B00F4FE3B /* Info.plist */,
-				D6C80F181ABBE67B00F4FE3B /* PromiseKTests.swift */,
+				"_______Group_PromiseK" /* PromiseK */,
 			);
-			path = Tests;
+			name = Sources;
 			sourceTree = "<group>";
 		};
-		D6C80F1E1ABBE68700F4FE3B /* Example */ = {
+		"_______Group_PromiseK" /* PromiseK */ = {
 			isa = PBXGroup;
 			children = (
-				D6C80F1F1ABBE68700F4FE3B /* main.swift */,
+				__PBXFileRef_Sources/Operators.swift /* Operators.swift */,
+				__PBXFileRef_Sources/Promise.swift /* Promise.swift */,
 			);
-			path = Example;
+			name = PromiseK;
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_PromiseKTests" /* PromiseKTests */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift */,
+			);
+			name = PromiseKTests;
+			path = Tests/PromiseKTests;
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_PromiseKTests" /* PromiseKTests */,
+			);
+			name = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		D6553C3D1C08199700A85392 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553C571C0819D100A85392 /* PromiseK.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C931C081E7500A85392 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CBD1C081EC800A85392 /* PromiseK.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553CA01C081E8400A85392 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CBA1C081EC700A85392 /* PromiseK.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F461A8448BE008272B1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C80F211ABBE8AE00F4FE3B /* PromiseK.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		D6553C3F1C08199700A85392 /* PromiseK-Mac */ = {
+		"______Target_PromiseK" /* PromiseK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6553C551C08199700A85392 /* Build configuration list for PBXNativeTarget "PromiseK-Mac" */;
+			buildConfigurationList = "_______Confs_PromiseK" /* Build configuration list for PBXNativeTarget "PromiseK" */;
 			buildPhases = (
-				D6553C3B1C08199700A85392 /* Sources */,
-				D6553C3C1C08199700A85392 /* Frameworks */,
-				D6553C3D1C08199700A85392 /* Headers */,
-				D6553C3E1C08199700A85392 /* Resources */,
+				CompilePhase_PromiseK /* Sources */,
+				"___LinkPhase_PromiseK" /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "PromiseK-Mac";
-			productName = "PromiseK-Mac";
-			productReference = D6553C401C08199700A85392 /* PromiseK.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D6553C481C08199700A85392 /* PromiseK-Mac Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6553C561C08199700A85392 /* Build configuration list for PBXNativeTarget "PromiseK-Mac Tests" */;
-			buildPhases = (
-				D6553C451C08199700A85392 /* Sources */,
-				D6553C461C08199700A85392 /* Frameworks */,
-				D6553C471C08199700A85392 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D6553C4C1C08199700A85392 /* PBXTargetDependency */,
-			);
-			name = "PromiseK-Mac Tests";
-			productName = "PromiseK-MacTests";
-			productReference = D6553C491C08199700A85392 /* PromiseK-Mac Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D6553C951C081E7500A85392 /* PromiseK-watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6553C9D1C081E7500A85392 /* Build configuration list for PBXNativeTarget "PromiseK-watchOS" */;
-			buildPhases = (
-				D6553C911C081E7500A85392 /* Sources */,
-				D6553C921C081E7500A85392 /* Frameworks */,
-				D6553C931C081E7500A85392 /* Headers */,
-				D6553C941C081E7500A85392 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PromiseK-watchOS";
-			productName = "PromiseK-watchOS";
-			productReference = D6553C961C081E7500A85392 /* PromiseK.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D6553CA21C081E8400A85392 /* PromiseK-tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6553CB41C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS" */;
-			buildPhases = (
-				D6553C9E1C081E8400A85392 /* Sources */,
-				D6553C9F1C081E8400A85392 /* Frameworks */,
-				D6553CA01C081E8400A85392 /* Headers */,
-				D6553CA11C081E8400A85392 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PromiseK-tvOS";
-			productName = "PromiseK-tvOS";
-			productReference = D6553CA31C081E8400A85392 /* PromiseK.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		D6553CAB1C081E8400A85392 /* PromiseK-tvOS Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6553CB71C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS Tests" */;
-			buildPhases = (
-				D6553CA81C081E8400A85392 /* Sources */,
-				D6553CA91C081E8400A85392 /* Frameworks */,
-				D6553CAA1C081E8400A85392 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D6553CAF1C081E8400A85392 /* PBXTargetDependency */,
-			);
-			name = "PromiseK-tvOS Tests";
-			productName = "PromiseK-tvOSTests";
-			productReference = D6553CAC1C081E8400A85392 /* PromiseK-tvOS Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D6A48F481A8448BE008272B1 /* PromiseK-iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6A48F5F1A8448BE008272B1 /* Build configuration list for PBXNativeTarget "PromiseK-iOS" */;
-			buildPhases = (
-				D6A48F441A8448BE008272B1 /* Sources */,
-				D6A48F451A8448BE008272B1 /* Frameworks */,
-				D6A48F461A8448BE008272B1 /* Headers */,
-				D6A48F471A8448BE008272B1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PromiseK-iOS";
+			name = PromiseK;
 			productName = PromiseK;
-			productReference = D6A48F491A8448BE008272B1 /* PromiseK.framework */;
+			productReference = "_____Product_PromiseK" /* PromiseK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D6A48F531A8448BE008272B1 /* PromiseK-iOS Tests */ = {
+		"______Target_PromiseKTests" /* PromiseKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D6A48F621A8448BE008272B1 /* Build configuration list for PBXNativeTarget "PromiseK-iOS Tests" */;
+			buildConfigurationList = "_______Confs_PromiseKTests" /* Build configuration list for PBXNativeTarget "PromiseKTests" */;
 			buildPhases = (
-				D6A48F501A8448BE008272B1 /* Sources */,
-				D6A48F511A8448BE008272B1 /* Frameworks */,
-				D6A48F521A8448BE008272B1 /* Resources */,
+				CompilePhase_PromiseKTests /* Sources */,
+				"___LinkPhase_PromiseKTests" /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D6A48F571A8448BE008272B1 /* PBXTargetDependency */,
+				__Dependency_PromiseK /* PBXTargetDependency */,
 			);
-			name = "PromiseK-iOS Tests";
+			name = PromiseKTests;
 			productName = PromiseKTests;
-			productReference = D6A48F541A8448BE008272B1 /* PromiseK-iOS Tests.xctest */;
+			productReference = "_____Product_PromiseKTests" /* PromiseKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		D6A48F6A1A84CBD3008272B1 /* PromiseKExample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKExample" */;
-			buildPhases = (
-				D6A48F671A84CBD3008272B1 /* Sources */,
-				D6A48F681A84CBD3008272B1 /* Frameworks */,
-				D6A48F691A84CBD3008272B1 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = PromiseKExample;
-			productName = PromiseKSamples;
-			productReference = D6A48F6B1A84CBD3008272B1 /* PromiseKExample */;
-			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D6A48F401A8448BE008272B1 /* Project object */ = {
+		__RootObject_ /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0700;
-				ORGANIZATIONNAME = koherent.org;
-				TargetAttributes = {
-					D6553C3F1C08199700A85392 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					D6553C481C08199700A85392 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					D6553C951C081E7500A85392 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					D6553CA21C081E8400A85392 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					D6553CAB1C081E8400A85392 = {
-						CreatedOnToolsVersion = 7.1.1;
-					};
-					D6A48F481A8448BE008272B1 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					D6A48F531A8448BE008272B1 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					D6A48F6A1A84CBD3008272B1 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-				};
+				LastUpgradeCheck = 9999;
 			};
-			buildConfigurationList = D6A48F431A8448BE008272B1 /* Build configuration list for PBXProject "PromiseK" */;
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "PromiseK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = D6A48F3F1A8448BE008272B1;
-			productRefGroup = D6A48F4A1A8448BE008272B1 /* Products */;
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D6A48F481A8448BE008272B1 /* PromiseK-iOS */,
-				D6553C3F1C08199700A85392 /* PromiseK-Mac */,
-				D6553CA21C081E8400A85392 /* PromiseK-tvOS */,
-				D6553C951C081E7500A85392 /* PromiseK-watchOS */,
-				D6A48F531A8448BE008272B1 /* PromiseK-iOS Tests */,
-				D6553C481C08199700A85392 /* PromiseK-Mac Tests */,
-				D6553CAB1C081E8400A85392 /* PromiseK-tvOS Tests */,
-				D6A48F6A1A84CBD3008272B1 /* PromiseKExample */,
+				"______Target_PromiseK" /* PromiseK */,
+				"______Target_PromiseKTests" /* PromiseKTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		D6553C3E1C08199700A85392 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C471C08199700A85392 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C941C081E7500A85392 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553CA11C081E8400A85392 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553CAA1C081E8400A85392 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F471A8448BE008272B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F521A8448BE008272B1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		D6553C3B1C08199700A85392 /* Sources */ = {
+		CompilePhase_PromiseK /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				D6553C581C0819D100A85392 /* Promise.swift in Sources */,
-				D6553C591C081AB300A85392 /* Operators.swift in Sources */,
+				__src_cc_ref_Sources/Operators.swift /* Operators.swift in Sources */,
+				__src_cc_ref_Sources/Promise.swift /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D6553C451C08199700A85392 /* Sources */ = {
+		CompilePhase_PromiseKTests /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 0;
 			files = (
-				D6553C5A1C081D2500A85392 /* PromiseKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C911C081E7500A85392 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CBE1C081EC800A85392 /* Promise.swift in Sources */,
-				D6553CBF1C081EC800A85392 /* Operators.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553C9E1C081E8400A85392 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CBB1C081EC700A85392 /* Promise.swift in Sources */,
-				D6553CBC1C081EC700A85392 /* Operators.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6553CA81C081E8400A85392 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6553CC01C081ECE00A85392 /* PromiseKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F441A8448BE008272B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C80F1B1ABBE67B00F4FE3B /* Promise.swift in Sources */,
-				D6948BA61B7CA97400CDD8FE /* Operators.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F501A8448BE008272B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C80F221ABBE8C700F4FE3B /* PromiseKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D6A48F671A84CBD3008272B1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D6C80F201ABBE68700F4FE3B /* main.swift in Sources */,
-				D65818331BB4E32900EF4530 /* Promise.swift in Sources */,
-				D65818341BB4E32900EF4530 /* Operators.swift in Sources */,
+				__src_cc_ref_Tests/PromiseKTests/PromiseKTests.swift /* PromiseKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D6553C4C1C08199700A85392 /* PBXTargetDependency */ = {
+		__Dependency_PromiseK /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D6553C3F1C08199700A85392 /* PromiseK-Mac */;
-			targetProxy = D6553C4B1C08199700A85392 /* PBXContainerItemProxy */;
-		};
-		D6553CAF1C081E8400A85392 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D6553CA21C081E8400A85392 /* PromiseK-tvOS */;
-			targetProxy = D6553CAE1C081E8400A85392 /* PBXContainerItemProxy */;
-		};
-		D6A48F571A8448BE008272B1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D6A48F481A8448BE008272B1 /* PromiseK-iOS */;
-			targetProxy = D6A48F561A8448BE008272B1 /* PBXContainerItemProxy */;
+			target = "______Target_PromiseK" /* PromiseK */;
+			targetProxy = D628F9C81DC99FA0004C8356 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D6553C511C08199700A85392 /* Debug */ = {
+		_ReleaseConf_PromiseK /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D6553C521C08199700A85392 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		D6553C531C08199700A85392 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		D6553C541C08199700A85392 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
-		};
-		D6553C9B1C081E7500A85392 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
-		D6553C9C1C081E7500A85392 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Release;
-		};
-		D6553CB51C081E8400A85392 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		D6553CB61C081E8400A85392 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.koherent.PromiseK;
-				PRODUCT_NAME = PromiseK;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Release;
-		};
-		D6553CB81C081E8400A85392 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.PromiseK-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Debug;
-		};
-		D6553CB91C081E8400A85392 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.PromiseK-tvOSTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = appletvos;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
-			};
-			name = Release;
-		};
-		D6A48F5D1A8448BE008272B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseK_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PromiseK;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		_ReleaseConf_PromiseKTests /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		"___DebugConf_PromiseK" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseK_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = PromiseK;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		D6A48F5E1A8448BE008272B1 /* Release */ = {
+		"___DebugConf_PromiseKTests" /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D6A48F601A8448BE008272B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PromiseK;
-				SKIP_INSTALL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
+				INFOPLIST_FILE = PromiseK.xcodeproj/PromiseKTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		D6A48F611A8448BE008272B1 /* Release */ = {
+		"_____Release_" /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = PromiseK;
-				SKIP_INSTALL = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
-		D6A48F631A8448BE008272B1 /* Debug */ = {
+		"_______Debug_" /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_PromiseK.xcodeproj/Configs/Project.xcconfig /* PromiseK.xcodeproj/Configs/Project.xcconfig */;
 			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
-		};
-		D6A48F641A8448BE008272B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.koherent.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		D6A48F6F1A84CBD3008272B1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Debug;
-		};
-		D6A48F701A84CBD3008272B1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Mac Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D6553C551C08199700A85392 /* Build configuration list for PBXNativeTarget "PromiseK-Mac" */ = {
+		"___RootConfs_" /* Build configuration list for PBXProject "PromiseK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D6553C511C08199700A85392 /* Debug */,
-				D6553C521C08199700A85392 /* Release */,
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		D6553C561C08199700A85392 /* Build configuration list for PBXNativeTarget "PromiseK-Mac Tests" */ = {
+		"_______Confs_PromiseK" /* Build configuration list for PBXNativeTarget "PromiseK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D6553C531C08199700A85392 /* Debug */,
-				D6553C541C08199700A85392 /* Release */,
+				"___DebugConf_PromiseK" /* Debug */,
+				_ReleaseConf_PromiseK /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		D6553C9D1C081E7500A85392 /* Build configuration list for PBXNativeTarget "PromiseK-watchOS" */ = {
+		"_______Confs_PromiseKTests" /* Build configuration list for PBXNativeTarget "PromiseKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D6553C9B1C081E7500A85392 /* Debug */,
-				D6553C9C1C081E7500A85392 /* Release */,
+				"___DebugConf_PromiseKTests" /* Debug */,
+				_ReleaseConf_PromiseKTests /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6553CB41C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6553CB51C081E8400A85392 /* Debug */,
-				D6553CB61C081E8400A85392 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6553CB71C081E8400A85392 /* Build configuration list for PBXNativeTarget "PromiseK-tvOS Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6553CB81C081E8400A85392 /* Debug */,
-				D6553CB91C081E8400A85392 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6A48F431A8448BE008272B1 /* Build configuration list for PBXProject "PromiseK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6A48F5D1A8448BE008272B1 /* Debug */,
-				D6A48F5E1A8448BE008272B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6A48F5F1A8448BE008272B1 /* Build configuration list for PBXNativeTarget "PromiseK-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6A48F601A8448BE008272B1 /* Debug */,
-				D6A48F611A8448BE008272B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6A48F621A8448BE008272B1 /* Build configuration list for PBXNativeTarget "PromiseK-iOS Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6A48F631A8448BE008272B1 /* Debug */,
-				D6A48F641A8448BE008272B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D6A48F711A84CBD3008272B1 /* Build configuration list for PBXNativeTarget "PromiseKExample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D6A48F6F1A84CBD3008272B1 /* Debug */,
-				D6A48F701A84CBD3008272B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D6A48F401A8448BE008272B1 /* Project object */;
+	rootObject = __RootObject_ /* Project object */;
 }
