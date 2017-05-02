@@ -20,7 +20,7 @@ class PromiseKTests: XCTestCase {
         do {
             let expectation = self.expectation(description: "")
             
-            _ = asyncGet(3).flatMap { (value: Int) -> Promise<()> in
+            _ = asyncGet(3).flatMap { value -> Promise<()> in
                 XCTAssertEqual(value, 3)
                 expectation.fulfill()
                 return Promise<()>()
@@ -42,6 +42,121 @@ class PromiseKTests: XCTestCase {
             }
             
             waitForExpectations(timeout: 3.0, handler: nil)
+        }
+    }
+    
+    func testFailableMap() {
+        do {
+            let squared = asyncGetOrFail(3, false).map {
+                try $0() * $0()
+            }
+            
+            XCTAssertEqual(try squared.sync()(), 9)
+        }
+        
+        do {
+            let squared = asyncGetOrFail(3, true).map {
+                try $0() * $0()
+            }
+            
+            _ = try squared.sync()()
+            XCTFail()
+        } catch let error as FooError {
+            XCTAssertEqual(error.value, 3)
+        } catch _ {
+            XCTFail()
+        }
+    }
+    
+    func testFailableFlatMap() {
+        do {
+            let a = asyncGetOrFail(2, false)
+            let b = asyncGetOrFail(3, false)
+            let sum = a.flatMap { a in
+                b.map { b in
+                    try a() + b()
+                }
+            }
+            
+            XCTAssertEqual(try sum.sync()(), 5)
+        }
+
+        do {
+            let a = asyncGetOrFail(2, true)
+            let b = asyncGetOrFail(3, false)
+            let sum = a.flatMap { a in
+                b.map { b in
+                    try a() + b()
+                }
+            }
+
+            _ = try sum.sync()()
+            XCTFail()
+        } catch let error as FooError {
+            XCTAssertEqual(error.value, 2)
+        } catch _ {
+            XCTFail()
+        }
+        
+        do {
+            let a = asyncGetOrFail(2, false)
+            let b = asyncGetOrFail(3, true)
+            let sum = a.flatMap { a in
+                b.map { b in
+                    try a() + b()
+                }
+            }
+            
+            _ = try sum.sync()()
+            XCTFail()
+        } catch let error as FooError {
+            XCTAssertEqual(error.value, 3)
+        } catch _ {
+            XCTFail()
+        }
+
+        do {
+            let a = asyncGetOrFail(2, true)
+            let b = asyncGetOrFail(3, true)
+            let sum = a.flatMap { a in
+                b.map { b in
+                    try a() + b()
+                }
+            }
+            
+            _ = try sum.sync()()
+            XCTFail()
+        } catch let error as FooError {
+            XCTAssertEqual(error.value, 2)
+        } catch _ {
+            XCTFail()
+        }
+        
+        do {
+            let sum = asyncGetOrFail(2, false).flatMap { getA throws -> Promise<Int> in
+                let a = try getA()
+                return asyncGet(3).map { b in
+                    a + b
+                }
+            }
+            
+            XCTAssertEqual(try sum.sync()(), 5)
+        }
+        
+        do {
+            let sum = asyncGetOrFail(2, true).flatMap { getA throws -> Promise<Int> in
+                let a = try getA()
+                return asyncGet(3).map { b in
+                    a + b
+                }
+            }
+            
+            _ = try sum.sync()()
+            XCTFail()
+        } catch let error as FooError {
+            XCTAssertEqual(error.value, 2)
+        } catch _ {
+            XCTFail()
         }
     }
     
@@ -70,25 +185,43 @@ class PromiseKTests: XCTestCase {
     }
     
     func testSample() {
-        // `flatMap` is equivalent to `then` of JavaScript's `Promise`
-        let a: Promise<Int> = asyncGet(2).flatMap { asyncGet($0) }.flatMap { asyncGet($0) }
-        let b: Promise<Int> = asyncGet(3).map { $0 * $0 }
-        let sum: Promise<Int> = a.flatMap { a0 in b.flatMap{ b0 in Promise(a0 + b0) } }
-        
-        // uses `Optional` for error handling
-        let mightFail: Promise<Int?> = asyncFailable(5).flatMap { Promise($0.map { $0 * $0 }) }
-        let howToCatch: Promise<Int> = asyncFailable(7).flatMap { Promise($0 ?? 0) }
-        
-        sum.wait()
-        print(a)
-        print(b)
-        print(sum)
-        
-        mightFail.wait()
-        print(mightFail)
-        
-        howToCatch.wait()
-        print(howToCatch)
+        do {
+            // `flatMap` is equivalent to `then` of JavaScript's `Promise`
+            let a: Promise<Int> = asyncGet(2)
+            let b: Promise<Int> = asyncGet(3).map { $0 * $0 } // Promise(9)
+            let sum: Promise<Int> = a.flatMap { a in b.flatMap{ b in Promise(a + b) } }
+            
+            sum.wait()
+            print(a)
+            print(b)
+            print(sum)
+        }
+
+        do {
+            // Collaborates with `throws` for error handling
+            let a: Promise<() throws -> Int> = asyncFailable(2)
+            let b: Promise<() throws -> Int> = asyncFailable(3).map { try $0() * $0() }
+            let sum: Promise<() throws -> Int> = a.flatMap { a in b.map { b in try a() * b() } }
+            
+            sum.wait()
+            print(a)
+            print(b)
+            print(sum)
+        }
+
+        do {
+            // Recovery from errors
+            let recovered: Promise<Int> = asyncFailable(42).map { value in
+                do {
+                    return try value()
+                } catch _ {
+                    return -1
+                }
+            }
+            
+            recovered.wait()
+            print(recovered)
+        }
     }
 }
 
@@ -104,12 +237,17 @@ func asyncGet(_ value: Int) -> Promise<Int> {
     return async(value)
 }
 
-func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<Int?> {
-    return fails ? Promise(nil) : asyncGet(value).map { $0 }
+func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<() throws -> Int> {
+    return asyncGet(value).map {
+        if fails {
+            throw FooError(value: value)
+        }
+        return $0
+    }
 }
 
-func asyncFailable(_ value: Int) -> Promise<Int?> {
-    return async(value).map { arc4random() % 2 == 0 ? $0 : nil }
+func asyncFailable(_ value: Int) -> Promise<() throws -> Int> {
+    return asyncGetOrFail(value, arc4random() % 2 == 0)
 }
 
 func foo(_ a: Int, _ b: Int) -> (Int, Int) {
@@ -118,6 +256,10 @@ func foo(_ a: Int, _ b: Int) -> (Int, Int) {
 
 func curry<A, B, Z>(_ f: @escaping (A, B) -> Z) -> (A) -> (B) -> Z {
     return { a in { b in f(a, b) } }
+}
+
+struct FooError: Error {
+    var value: Int
 }
 
 extension Promise {
@@ -130,5 +272,14 @@ extension Promise {
         while (!finished){
             RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.1))
         }
+    }
+    
+    func sync() -> Value {
+        wait()
+        var value: Value? = nil
+        _ = map {
+            value = $0
+        }
+        return value!
     }
 }
