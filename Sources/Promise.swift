@@ -1,6 +1,6 @@
 import Foundation
 
-open class Promise<T> {
+public class Promise<T> {
     fileprivate let lock = NSRecursiveLock()
     
     fileprivate var value: T?
@@ -39,16 +39,12 @@ open class Promise<T> {
         lock.unlock()
     }
     
-    open func map<U>(_ f: @escaping (T) -> U) -> Promise<U> {
+    public func map<U>(_ f: @escaping (T) -> U) -> Promise<U> {
         return flatMap { Promise<U>(f($0)) }
     }
     
-    open func flatMap<U>(_ f: @escaping (T) -> Promise<U>) -> Promise<U> {
+    public func flatMap<U>(_ f: @escaping (T) -> Promise<U>) -> Promise<U> {
         return Promise<U> { resolve in self.reserve { resolve(f($0)) } }
-    }
-    
-    open func apply<U>(_ f: Promise<(T) -> U>) -> Promise<U> {
-        return f.flatMap { self.map($0) }
     }
 }
 
@@ -60,40 +56,4 @@ extension Promise : CustomStringConvertible {
             return "Promise"
         }
     }
-}
-
-public func pure<T>(_ x: T) -> Promise<T> {
-    return Promise(x)
-}
-
-public func flatten<T>(_ x: Promise<Promise<T>>) -> Promise<T> {
-    return x.flatMap { $0 }
-}
-
-public func >>-<T, U>(lhs: Promise<T>, rhs: @escaping (T) -> Promise<U>) -> Promise<U> {
-    return lhs.flatMap(rhs)
-}
-
-public func >>-?<T, U>(lhs: Promise<T?>, rhs: @escaping (T) -> Promise<U?>) -> Promise<U?> {
-    return lhs.flatMap { $0.map(rhs) ?? Promise(nil) }
-}
-
-public func >>-<T, U>(lhs: Promise<T?>, rhs: @escaping (T?) -> Promise<U?>?) -> Promise<U?> {
-    return lhs.flatMap { rhs($0) ?? Promise(nil) }
-}
-
-public func -<<<T, U>(lhs: @escaping (T) -> Promise<U>, rhs: Promise<T>) -> Promise<U> {
-    return rhs.flatMap(lhs)
-}
-
-public func -<<?<T, U>(lhs: @escaping (T) -> Promise<U?>, rhs: Promise<T?>) -> Promise<U?> {
-    return rhs >>-? lhs
-}
-
-public func <^><T, U>(lhs: @escaping (T) -> U, rhs: Promise<T>) -> Promise<U> {
-    return rhs.map(lhs)
-}
-
-public func <*><T, U>(lhs: Promise<(T) -> U>, rhs: Promise<T>) -> Promise<U> {
-    return rhs.apply(lhs)
 }
