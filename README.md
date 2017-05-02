@@ -4,10 +4,32 @@ PromiseK
 _PromiseK_ provides a simple monadic `Promise` type for Swift.
 
 ```swift
-// `map` and `flatMap` are equivalent to `then` of JavaScript's `Promise`
-let a: Promise<Int> = asyncGet(2).flatMap { asyncGet($0) }.flatMap { asyncGet($0) }
-let b: Promise<Int> = asyncGet(3).map { $0 * $0 }
-let sum: Promise<Int> = a.flatMap { a0 in b.flatMap { b0 in Promise(a0 + b0) } }
+// `flatMap` is equivalent to `then` of JavaScript's `Promise`
+let a: Promise<Int> = asyncGet(2)
+let b: Promise<Int> = asyncGet(3).map { $0 * $0 } // Promise(9)
+let sum: Promise<Int> = a.flatMap { a in b.flatMap{ b in Promise(a + b) } }
+```
+
+`Promise` can collaborate with `throws` for failable asynchronous operations.
+
+```swift
+// Collaborates with `throws` for error handling
+let a: Promise<() throws -> Int> = asyncFailable(2)
+let b: Promise<() throws -> Int> = asyncFailable(3).map { try $0() * $0() }
+let sum: Promise<() throws -> Int> = a.flatMap { a in b.map { b in try a() * b() } }
+```
+
+It is also possible to recover from errors.
+
+```swift
+// Recovery from errors
+let recovered: Promise<Int> = asyncFailable(42).map { value in
+    do {
+        return try value()
+    } catch _ {
+        return -1
+    }
+}
 ```
 
 Installation
