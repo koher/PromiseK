@@ -39,12 +39,12 @@ public class Promise<Value> {
         lock.unlock()
     }
     
-    public func map<T>(_ f: @escaping (Value) -> T) -> Promise<T> {
-        return flatMap { Promise<T>(f($0)) }
+    public func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
+        return flatMap { Promise<T>(transform($0)) }
     }
     
-    public func flatMap<T>(_ f: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T> { resolve in self.reserve { resolve(f($0)) } }
+    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
+        return Promise<T> { resolve in self.reserve { resolve(transform($0)) } }
     }
 }
 
