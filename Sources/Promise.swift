@@ -1,10 +1,10 @@
 import Foundation
 
 public class Promise<T> {
-    fileprivate let lock = NSRecursiveLock()
+    private let lock = NSRecursiveLock()
     
     fileprivate var value: T?
-    fileprivate var handlers: [(T) -> ()] = []
+    private var handlers: [(T) -> ()] = []
     
     public init(_ value: T) {
         self.value = value
@@ -14,7 +14,7 @@ public class Promise<T> {
         executor(resolve)
     }
     
-    fileprivate func resolve(_ promise: Promise<T>) {
+    private func resolve(_ promise: Promise<T>) {
         promise.reserve {
             self.lock.lock()
             if self.value == nil {
@@ -29,7 +29,7 @@ public class Promise<T> {
         }
     }
     
-    fileprivate func reserve(_ handler: @escaping (T) -> ()) {
+    private func reserve(_ handler: @escaping (T) -> ()) {
         lock.lock()
         if let value = self.value {
             handler(value)
