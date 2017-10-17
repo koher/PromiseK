@@ -34,6 +34,21 @@ class PromiseKTests: XCTestCase {
         }
     }
     
+    func testGet() {
+        let expectation = self.expectation(description: "testGet")
+        
+        let value = asyncGet(42)
+        var obtained: Int? = nil
+        value.get {
+            obtained = $0
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1.0, handler: nil)
+        
+        XCTAssertEqual(obtained, .some(42))
+    }
+    
     func testFailableMap() {
         do {
             let squared = asyncGetOrFail(3, false).map {
@@ -258,7 +273,7 @@ extension Promise {
     func sync() -> Value {
         wait()
         var value: Value? = nil
-        _ = map {
+        get {
             value = $0
         }
         return value!

@@ -46,6 +46,10 @@ public class Promise<Value> {
     public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
         return Promise<T> { resolve in self.reserve { resolve(transform($0)) } }
     }
+    
+    public func get(_ handler: @escaping (Value) -> ()) {
+        _ = map(handler)
+    }
 }
 
 extension Promise : CustomStringConvertible {
