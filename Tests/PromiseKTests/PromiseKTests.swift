@@ -263,7 +263,7 @@ extension Promise {
         var finished = false
         _ = self.flatMap { (value: Value) -> Promise<()> in
             finished = true
-            return Promise<()>()
+            return Promise<()>(())
         }
         while (!finished){
             RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.1))
