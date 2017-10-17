@@ -38,9 +38,9 @@ Installation
 By Swift Package Manager.
 
 ```swift
-.Package(
+.package(
     url: "https://github.com/koher/PromiseK.git",
-    majorVersion: 3
+    from: "3.0.0-alpha"
 )
 ```
 
