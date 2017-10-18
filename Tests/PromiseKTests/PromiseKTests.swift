@@ -173,7 +173,7 @@ class PromiseKTests: XCTestCase {
             
             let promise = Promise<Int> { resolve in
                 queue1.asyncAfter(deadline: .now() + 0.01) {
-                    resolve(Promise(2))
+                    resolve(2)
                 }
             }
             
@@ -232,7 +232,7 @@ class PromiseKTests: XCTestCase {
 func async<T>(_ value: T) -> Promise<T> {
     return Promise<T> { resolve in
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            resolve(Promise(value))
+            resolve(value)
         }
     }
 }

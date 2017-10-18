@@ -10,41 +10,44 @@ public class Promise<Value> {
         self.value = value
     }
     
-    public init(_ executor: (_ resolve: @escaping (Promise<Value>) -> ()) -> ()) {
+    public init(_ executor: (_ resolve: @escaping (Value) -> ()) -> ()) {
         executor(resolve)
     }
     
-    private func resolve(_ promise: Promise<Value>) {
-        promise.reserve {
-            self.lock.lock()
-            if self.value == nil {
-                self.value = $0
-                
-                for handler in self.handlers {
-                    handler($0)
-                }
-                self.handlers.removeAll(keepingCapacity: false)
-            }
-            self.lock.unlock()
-        }
-    }
-    
-    private func reserve(_ handler: @escaping (Value) -> ()) {
+    private func resolve(_ value: Value) {
         lock.lock()
-        if let value = self.value {
-            handler(value)
-        } else {
-            handlers.append(handler)
+        defer {
+            lock.unlock()
         }
-        lock.unlock()
+        if self.value == nil {
+            self.value = value
+            
+            for handler in self.handlers {
+                handler(value)
+            }
+            self.handlers.removeAll(keepingCapacity: false)
+        }
     }
     
     public func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
-        return flatMap { Promise<T>(transform($0)) }
+        lock.lock()
+        defer {
+            lock.unlock()
+        }
+
+        if let value = self.value {
+            return Promise<T>(transform(value))
+        } else {
+            return Promise<T> { resolve in
+                handlers.append { value in
+                    resolve(transform(value))
+                }
+            }
+        }
     }
     
     public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T> { resolve in self.reserve { resolve(transform($0)) } }
+        return Promise<T> { resolve in self.get { transform($0).get { resolve($0) } } }
     }
     
     public func get(_ handler: @escaping (Value) -> ()) {
