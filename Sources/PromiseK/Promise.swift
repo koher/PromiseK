@@ -1,10 +1,9 @@
 import Foundation
 
 public class Promise<Value> {
-    private let lock = NSRecursiveLock()
-    
     private var value: Value?
     private var handlers: [(Value) -> ()] = []
+    private let lock = NSRecursiveLock()
     
     public init(_ value: Value) {
         self.value = value
