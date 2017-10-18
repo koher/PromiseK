@@ -12,25 +12,22 @@ public class Promise<Value> {
     
     public init(_ executor: (_ fulfill: @escaping (Value) -> ()) -> ()) {
         executor { value in
-            self.lock.lock()
-            defer { self.lock.unlock() }
-            
-            precondition(self.value == nil, "`fulfill` cannot be called multiple times.")
-            
-            self.value = value
-            self.handlers.forEach { $0(value) }
-            self.handlers.removeAll(keepingCapacity: false)
+            synchronized(with: self.lock) {
+                precondition(self.value == nil, "`fulfill` cannot be called multiple times.")
+                self.value = value
+                self.handlers.forEach { $0(value) }
+                self.handlers.removeAll(keepingCapacity: false)
+            }
         }
     }
     
     public func get(_ handler: @escaping (Value) -> ()) {
-        lock.lock()
-        defer { lock.unlock() }
-        
-        if let value = self.value {
-            handler(value)
-        } else {
-            handlers.append(handler)
+        synchronized(with: lock) {
+            if let value = self.value {
+                handler(value)
+            } else {
+                handlers.append(handler)
+            }
         }
     }
     
@@ -51,4 +48,10 @@ extension Promise : CustomStringConvertible {
             return "Promise(\(Value.self))"
         }
     }
+}
+
+private func synchronized(with lock: NSRecursiveLock, _ operation: () -> ()) {
+    lock.lock()
+    defer { lock.unlock() }
+    operation()
 }
