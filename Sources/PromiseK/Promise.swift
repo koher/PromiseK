@@ -11,18 +11,16 @@ public class Promise<Value> {
     }
     
     public init(_ executor: (_ fulfill: @escaping (Value) -> ()) -> ()) {
-        executor(fulfill)
-    }
-    
-    private func fulfill(_ value: Value) {
-        lock.lock()
-        defer { lock.unlock() }
-        
-        precondition(self.value == nil, "`fulfill` cannot be called multiple times.")
-
-        self.value = value
-        handlers.forEach { $0(value) }
-        handlers.removeAll(keepingCapacity: false)
+        executor { value in
+            self.lock.lock()
+            defer { self.lock.unlock() }
+            
+            precondition(self.value == nil, "`fulfill` cannot be called multiple times.")
+            
+            self.value = value
+            self.handlers.forEach { $0(value) }
+            self.handlers.removeAll(keepingCapacity: false)
+        }
     }
     
     public func get(_ handler: @escaping (Value) -> ()) {
