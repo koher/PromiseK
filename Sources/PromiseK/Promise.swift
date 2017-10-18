@@ -30,28 +30,24 @@ public class Promise<Value> {
     }
     
     public func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
+        return Promise<T> { fulfill in get { fulfill(transform($0)) } }
+    }
+    
+    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
+        return Promise<T> { fulfill in get { transform($0).get { fulfill($0) } } }
+    }
+    
+    public func get(_ handler: @escaping (Value) -> ()) {
         lock.lock()
         defer {
             lock.unlock()
         }
-
+        
         if let value = self.value {
-            return Promise<T>(transform(value))
+            handler(value)
         } else {
-            return Promise<T> { fulfill in
-                handlers.append { value in
-                    fulfill(transform(value))
-                }
-            }
+            handlers.append(handler)
         }
-    }
-    
-    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T> { fulfill in self.get { transform($0).get { fulfill($0) } } }
-    }
-    
-    public func get(_ handler: @escaping (Value) -> ()) {
-        _ = map(handler)
     }
 }
 
