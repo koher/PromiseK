@@ -168,12 +168,12 @@ class PromiseKTests: XCTestCase {
         let queue1 = DispatchQueue(label: "foo", attributes: [])
         let queue2 = DispatchQueue(label: "bar", attributes: [])
 
-        for i in 1...100 { // cause simultaneous `resolve` and `reserve`
+        for i in 1...100 { // cause simultaneous `fulfill` and `map`
             let expectation = self.expectation(description: "\(i)")
             
-            let promise = Promise<Int> { resolve in
+            let promise = Promise<Int> { fulfill in
                 queue1.asyncAfter(deadline: .now() + 0.01) {
-                    resolve(2)
+                    fulfill(2)
                 }
             }
             
@@ -230,9 +230,9 @@ class PromiseKTests: XCTestCase {
 }
 
 func async<T>(_ value: T) -> Promise<T> {
-    return Promise<T> { resolve in
+    return Promise<T> { fulfill in
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            resolve(value)
+            fulfill(value)
         }
     }
 }

@@ -10,11 +10,11 @@ public class Promise<Value> {
         self.value = value
     }
     
-    public init(_ executor: (_ resolve: @escaping (Value) -> ()) -> ()) {
-        executor(resolve)
+    public init(_ executor: (_ fulfill: @escaping (Value) -> ()) -> ()) {
+        executor(fulfill)
     }
     
-    private func resolve(_ value: Value) {
+    private func fulfill(_ value: Value) {
         lock.lock()
         defer {
             lock.unlock()
@@ -38,16 +38,16 @@ public class Promise<Value> {
         if let value = self.value {
             return Promise<T>(transform(value))
         } else {
-            return Promise<T> { resolve in
+            return Promise<T> { fulfill in
                 handlers.append { value in
-                    resolve(transform(value))
+                    fulfill(transform(value))
                 }
             }
         }
     }
     
     public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T> { resolve in self.get { transform($0).get { resolve($0) } } }
+        return Promise<T> { fulfill in self.get { transform($0).get { fulfill($0) } } }
     }
     
     public func get(_ handler: @escaping (Value) -> ()) {
