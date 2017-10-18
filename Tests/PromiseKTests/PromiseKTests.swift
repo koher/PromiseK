@@ -198,7 +198,7 @@ class PromiseKTests: XCTestCase {
             // `flatMap` is equivalent to `then` of JavaScript's `Promise`
             let a: Promise<Int> = asyncGet(2)
             let b: Promise<Int> = asyncGet(3).map { $0 * $0 } // Promise(9)
-            let sum: Promise<Int> = a.flatMap { a in b.map{ b in a + b } }
+            let sum: Promise<Int> = a.flatMap { a in b.map { b in a + b } }
             
             sum.wait()
             print(a)

@@ -7,7 +7,7 @@ _PromiseK_ provides a simple monadic `Promise` type for Swift.
 // `flatMap` is equivalent to `then` of JavaScript's `Promise`
 let a: Promise<Int> = asyncGet(2)
 let b: Promise<Int> = asyncGet(3).map { $0 * $0 } // Promise(9)
-let sum: Promise<Int> = a.flatMap { a in b.map{ b in a + b } }
+let sum: Promise<Int> = a.flatMap { a in b.map { b in a + b } }
 ```
 
 `Promise` can collaborate with `throws` for failable asynchronous operations.
