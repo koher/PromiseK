@@ -3,7 +3,7 @@ import Foundation
 public class Promise<Value> {
     private let lock = NSRecursiveLock()
     
-    fileprivate var value: Value?
+    private var value: Value?
     private var handlers: [(Value) -> ()] = []
     
     public init(_ value: Value) {
@@ -16,9 +16,8 @@ public class Promise<Value> {
     
     private func fulfill(_ value: Value) {
         lock.lock()
-        defer {
-            lock.unlock()
-        }
+        defer { lock.unlock() }
+        
         if self.value == nil {
             self.value = value
             
@@ -39,9 +38,7 @@ public class Promise<Value> {
     
     public func get(_ handler: @escaping (Value) -> ()) {
         lock.lock()
-        defer {
-            lock.unlock()
-        }
+        defer { lock.unlock() }
         
         if let value = self.value {
             handler(value)
