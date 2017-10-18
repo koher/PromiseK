@@ -18,12 +18,11 @@ public class Promise<Value> {
         lock.lock()
         defer { lock.unlock() }
         
-        if self.value == nil {
-            self.value = value
-            
-            handlers.forEach { $0(value) }
-            handlers.removeAll(keepingCapacity: false)
-        }
+        precondition(self.value == nil, "`fulfill` cannot be called multiple times.")
+
+        self.value = value
+        handlers.forEach { $0(value) }
+        handlers.removeAll(keepingCapacity: false)
     }
     
     public func get(_ handler: @escaping (Value) -> ()) {
