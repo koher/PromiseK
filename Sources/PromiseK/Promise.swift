@@ -21,10 +21,8 @@ public class Promise<Value> {
         if self.value == nil {
             self.value = value
             
-            for handler in self.handlers {
-                handler(value)
-            }
-            self.handlers.removeAll(keepingCapacity: false)
+            handlers.forEach { $0(value) }
+            handlers.removeAll(keepingCapacity: false)
         }
     }
     
