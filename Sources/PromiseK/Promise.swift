@@ -28,14 +28,6 @@ public class Promise<Value> {
         }
     }
     
-    public func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
-        return Promise<T> { fulfill in get { fulfill(transform($0)) } }
-    }
-    
-    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
-        return Promise<T> { fulfill in get { transform($0).get { fulfill($0) } } }
-    }
-    
     public func get(_ handler: @escaping (Value) -> ()) {
         lock.lock()
         defer { lock.unlock() }
@@ -45,6 +37,14 @@ public class Promise<Value> {
         } else {
             handlers.append(handler)
         }
+    }
+    
+    public func map<T>(_ transform: @escaping (Value) -> T) -> Promise<T> {
+        return Promise<T> { fulfill in get { fulfill(transform($0)) } }
+    }
+    
+    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
+        return Promise<T> { fulfill in get { transform($0).get { fulfill($0) } } }
     }
 }
 
