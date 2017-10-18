@@ -49,6 +49,11 @@ class PromiseKTests: XCTestCase {
         XCTAssertEqual(obtained, .some(42))
     }
     
+    func testDescription() {
+        XCTAssertEqual(Promise(42).description, "Promise(42)")
+        XCTAssertEqual(Promise<Int> { _ in }.description, "Promise(Int)")
+    }
+    
     func testFailableMap() {
         do {
             let squared = asyncGetOrFail(3, false).map {

@@ -53,7 +53,7 @@ extension Promise : CustomStringConvertible {
         if let value = self.value {
             return "Promise(\(value))"
         } else {
-            return "Promise"
+            return "Promise(\(Value.self))"
         }
     }
 }
