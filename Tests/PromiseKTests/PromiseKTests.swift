@@ -193,6 +193,46 @@ class PromiseKTests: XCTestCase {
         }
     }
     
+    func testKeepingFulfill() {
+        do {
+            var fulfill: ((Int) -> ())!
+            let a = Promise<Int> {
+                fulfill = $0
+            }
+            fulfill(42)
+            XCTAssertEqual(a.sync(), 42)
+        }
+        
+        do {
+            var fulfill: ((@escaping () throws -> Int) -> ())!
+            let a = Promise<() throws -> Int> {
+                fulfill = $0
+            }
+            fulfill { 42 }
+            XCTAssertEqual(try! a.sync()(), 42)
+        }
+        
+        do {
+            let queue = DispatchQueue(label: "foo", attributes: [])
+
+            var fulfill: ((@escaping () throws -> Int) -> ())!
+            let a = Promise<() throws -> Int> {
+                fulfill = $0
+            }
+            
+            let expectation = self.expectation(description: "testKeepingFulfill")
+            
+            queue.asyncAfter(deadline: .now() + 0.01) {
+                fulfill { 42 }
+                expectation.fulfill()
+            }
+            
+            waitForExpectations(timeout: 3.0, handler: nil)
+            
+            XCTAssertEqual(try! a.sync()(), 42)
+        }
+    }
+    
     func testSample() {
         do {
             // `flatMap` is equivalent to `then` of JavaScript's `Promise`
