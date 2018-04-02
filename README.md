@@ -35,13 +35,19 @@ let recovered: Promise<Int> = asyncFailable(42).map { value in
 Installation
 ----------------------------
 
-By Swift Package Manager.
+### Swift Package Manager
 
 ```swift
 .package(
     url: "https://github.com/koher/PromiseK.git",
-    from: "3.0.0-alpha"
+    from: "3.0.0"
 )
+```
+
+### [Carthage](https://github.com/Carthage/Carthage)
+
+```
+github "koher/PromiseK" ~> 3.0.0
 ```
 
 License
