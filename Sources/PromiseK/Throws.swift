@@ -10,8 +10,16 @@ extension Promise {
         }
     }
     
+    private func _flatMap<T>(_ transform: @escaping (Value) -> Promise<T>) -> Promise<T> {
+        return flatMap(transform)
+    }
+    
+    public func flatMap<T>(_ transform: @escaping (Value) -> Promise<() throws -> T>) -> Promise<() throws -> T> {
+        return _flatMap(transform)
+    }
+    
     public func flatMap<T>(_ transform: @escaping (Value) throws -> Promise<T>) -> Promise<() throws -> T> {
-        return flatMap { value in
+        return _flatMap { value in
             do {
                 return try transform(value).map { value in { value } }
             } catch let error {
@@ -21,7 +29,7 @@ extension Promise {
     }
     
     public func flatMap<T>(_ transform: @escaping (Value) throws -> Promise<() throws -> T>) -> Promise<() throws -> T> {
-        return flatMap { value in
+        return _flatMap { value in
             do {
                 return try transform(value)
             } catch let error {
