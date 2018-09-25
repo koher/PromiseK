@@ -1,5 +1,5 @@
 import XCTest
-@testable import PromiseK
+import PromiseK
 
 class PromiseKTests: XCTestCase {
     func testMap() {
