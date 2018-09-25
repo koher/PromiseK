@@ -1,6 +1,8 @@
 import XCTest
-@testable import PromiseKTests
 
-XCTMain([
-    testCase(PromiseKTests.allTests),
-])
+import PromiseKTests
+
+var tests = [XCTestCaseEntry]()
+tests += PromiseKTests.__allTests()
+
+XCTMain(tests)

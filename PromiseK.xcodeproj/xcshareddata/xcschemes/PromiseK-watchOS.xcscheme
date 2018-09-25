@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+               BlueprintIdentifier = "D6E7457C215A9B0B00547DFD"
                BuildableName = "PromiseK.framework"
-               BlueprintName = "PromiseK-iOS"
+               BlueprintName = "PromiseK-watchOS"
                ReferencedContainer = "container:PromiseK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62C6CA91FB4AE6900E7DF02"
-               BuildableName = "PromiseKTests.xctest"
-               BlueprintName = "PromiseKTests-iOS"
-               ReferencedContainer = "container:PromiseK.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
-            BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
-            ReferencedContainer = "container:PromiseK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+            BlueprintIdentifier = "D6E7457C215A9B0B00547DFD"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK-watchOS"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+            BlueprintIdentifier = "D6E7457C215A9B0B00547DFD"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK-watchOS"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

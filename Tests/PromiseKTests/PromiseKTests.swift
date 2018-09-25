@@ -1,5 +1,5 @@
 import XCTest
-@testable import PromiseK
+import PromiseK
 
 class PromiseKTests: XCTestCase {
     func testMap() {
@@ -296,7 +296,7 @@ func asyncGetOrFail(_ value: Int, _ fails: Bool) -> Promise<() throws -> Int> {
 }
 
 func asyncFailable(_ value: Int) -> Promise<() throws -> Int> {
-    return asyncGetOrFail(value, arc4random() % 2 == 0)
+    return asyncGetOrFail(value, Bool.random())
 }
 
 struct FooError: Error {

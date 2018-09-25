@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+               BlueprintIdentifier = "D6E74560215A9AFB00547DFD"
                BuildableName = "PromiseK.framework"
-               BlueprintName = "PromiseK-iOS"
+               BlueprintName = "PromiseK-tvOS"
                ReferencedContainer = "container:PromiseK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D62C6CA91FB4AE6900E7DF02"
+               BlueprintIdentifier = "D6E74568215A9AFB00547DFD"
                BuildableName = "PromiseKTests.xctest"
-               BlueprintName = "PromiseKTests-iOS"
+               BlueprintName = "PromiseKTests-tvOS"
                ReferencedContainer = "container:PromiseK.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+            BlueprintIdentifier = "D6E74560215A9AFB00547DFD"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK-tvOS"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+            BlueprintIdentifier = "D6E74560215A9AFB00547DFD"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK-tvOS"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D62C6CA11FB4AE6900E7DF02"
+            BlueprintIdentifier = "D6E74560215A9AFB00547DFD"
             BuildableName = "PromiseK.framework"
-            BlueprintName = "PromiseK-iOS"
+            BlueprintName = "PromiseK-tvOS"
             ReferencedContainer = "container:PromiseK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
