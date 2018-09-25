@@ -56,7 +56,6 @@
 		D62C6C8E1FB4AD0100E7DF02 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		D62C6C8F1FB4AD0100E7DF02 /* PromiseK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromiseK.h; sourceTree = "<group>"; };
 		D62C6C901FB4AD0100E7DF02 /* Throws.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throws.swift; sourceTree = "<group>"; };
-		D62C6C961FB4AD2900E7DF02 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
 		D62C6C981FB4AD2900E7DF02 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62C6C991FB4AD2900E7DF02 /* PromiseKTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseKTests.swift; sourceTree = "<group>"; };
 		D62C6CA21FB4AE6900E7DF02 /* PromiseK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,7 +168,6 @@
 		D62C6C951FB4AD2900E7DF02 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D62C6C961FB4AD2900E7DF02 /* LinuxMain.swift */,
 				D62C6C971FB4AD2900E7DF02 /* PromiseKTests */,
 			);
 			path = Tests;
