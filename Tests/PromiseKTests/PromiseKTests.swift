@@ -306,11 +306,11 @@ struct FooError: Error {
 extension Promise {
     func wait() {
         var finished = false
-        _ = self.flatMap { (value: Value) -> Promise<()> in
+        _ = self.flatMap { _ -> Promise<()> in
             finished = true
             return Promise<()>(())
         }
-        while (!finished){
+        while !finished {
             RunLoop.current.run(until: Date(timeIntervalSinceNow: 0.1))
         }
     }
